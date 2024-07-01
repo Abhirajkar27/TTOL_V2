@@ -57,22 +57,7 @@ body {
   left: 93px;
   transform: rotate(13.069deg);
 }
-.Landing_YB {
-  color: var(--Neutral-Light, #fff);
-  text-align: center;
-  font-feature-settings: "clig" off, "liga" off;
-  width: 11.75rem;
-  height: 1.8125rem;
-  text-shadow: 0px 2px 0px #161716;
-  -webkit-text-stroke-width: 1;
-  -webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
-  font-family: Gilroy;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%; /* 1.8rem */
-  white-space: nowrap;
-}
+
 .Landing_activity_info {
   position: relative;
   top: 3rem;
@@ -81,17 +66,18 @@ body {
   font-size: 0.9rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 100%; /* 0.75rem */
+  line-height: 100%; 
   text-decoration-line: underline;
 }
 .Landing_buttons {
   position: relative;
-  top:2rem;
+  top:4.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
+  margin: auto;
 }
 .Landing_start {
   font-weight: 700;
@@ -130,6 +116,22 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+.Landing_YB {
+  color: var(--Neutral-Light, #fff);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  width: 11.75rem;
+  height: 1.8125rem;
+  text-shadow: 0px 2px 0px #161716;
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
+  font-family: Gilroy;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.8rem */
+  white-space: nowrap;
 }
 .Landing_TL {
   color: var(--Accent-Accent--03-Accent-03, #fbff08);
