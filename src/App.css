@@ -7,48 +7,60 @@ body {
   background: var(--Dark-Dark--100, #0e1928);
   overflow: hidden;
 }
-.Landing_card_sign{
+.Landing_card_sign {
   position: relative;
-top: -85px;
-  color: var(--Neutral-Light, #FFF);
-text-align: center;
-font-feature-settings: 'clig' off, 'liga' off;
--webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
-font-family: "Cinema Groovy";
-font-size: 6.5625rem;
-font-style: normal;
-font-weight: 900;
-line-height: normal;
-letter-spacing: -0.01875rem;
-margin-bottom: 25px;
-
-}
-.Landing_cards{
-  border: 2px solid black;
-width: 7.1875rem;
-height: 10.5625rem;
-flex-shrink: 0;
-border-radius: 0.75rem;
-position: relative;
-z-index: 10;
-
-}
-.card1{
-position: relative;
-top:265px;
-z-index: 12;
-}
-.card2{
-  position: relative;
-top:101px;
-left: -108px;
-transform: rotate(-13.069deg);
-}
-.Landing_YB{
-  color: var(--Neutral-Light, #FFF);
+  top: -85px;
+  color: var(--Neutral-Light, #fff);
   text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
+  font-family: "Cinema Groovy";
+  font-size: 6.5625rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.01875rem;
+  margin-bottom: 25px;
+}
+
+.landing_cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -2.06rem;
+}
+.Landing_card {
+  border: 2px solid black;
+  width: 7.1875rem;
+  height: 10.5625rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  position: relative;
+  z-index: 10;
+}
+.card1 {
+  position: relative;
+  top: 250px;
+  z-index: 12;
+}
+.card2 {
+  position: relative;
+  top: 110px;
+  left: -95px;
+  transform: rotate(-13.069deg);
+}
+.card3 {
+  position: relative;
+  top: -60px;
+  left: 93px;
+  transform: rotate(13.069deg);
+}
+.Landing_YB {
+  color: var(--Neutral-Light, #fff);
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
   width: 11.75rem;
   height: 1.8125rem;
   text-shadow: 0px 2px 0px #161716;
@@ -59,52 +71,58 @@ transform: rotate(-13.069deg);
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 1.8rem */
-  white-space:nowrap;
+  white-space: nowrap;
 }
-.Landing_activity_info{
-  color: var(--Light-Light--80, #E0E7F1);
-font-family: Gilroy;
-font-size: 0.75rem;
-font-style: normal;
-font-weight: 500;
-line-height: 100%; /* 0.75rem */
-text-decoration-line: underline;
+.Landing_activity_info {
+  position: relative;
+  top: 3rem;
+  color: var(--Light-Light--80, #e0e7f1);
+  font-family: Gilroy;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 0.75rem */
+  text-decoration-line: underline;
 }
-.Landing_buttons{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 12px;
+.Landing_buttons {
+  position: relative;
+  top:7rem ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
-.Landing_start{
+.Landing_start {
   font-weight: 700;
-display: flex;
-width: 13.625rem;
-padding: 0.9375rem 2rem;
-justify-content: center;
-align-items: center;
-gap: 0.625rem;
-border-radius: 0.75rem;
-background: var(--Primary-Primary-100, #C6FF00);
-border: none;
+  display: flex;
+  width: 13.625rem;
+  padding: 0.9375rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.75rem;
+  background: var(--Primary-Primary-100, #c6ff00);
+  border: none;
 }
-.Landing_activity{
+.Landing_activity {
   color: white;
-  background: var(--Dark-Dark--100, #0E1928);
+  background: var(--Dark-Dark--100, #0e1928);
   display: inline-flex;
-padding: 0.9375rem 2rem;
-justify-content: center;
-align-items: center;
-gap: 0.625rem;
+  padding: 0.9375rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
   border-radius: 0.75rem;
   font-weight: 700;
-border: 1.8px solid var(--Light-Light--100, #FFF);
+  border: 1.8px solid var(--Light-Light--100, #fff);
 }
-.activity_info{
+.activity_info {
   margin-top: -61px;
 }
-.Landing_Upperdiv{
+.Landing_Upperdiv {
+  position: relative;
+  top: 6.69rem;
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -112,25 +130,20 @@ border: 1.8px solid var(--Light-Light--100, #FFF);
   justify-content: center;
   align-items: center;
 }
-.Landing_TL{
-  color: var(--Accent-Accent--03-Accent-03, #FBFF08);
+.Landing_TL {
+  color: var(--Accent-Accent--03-Accent-03, #fbff08);
   text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
+  font-feature-settings: "clig" off, "liga" off;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--Neutral-Dark-100, #161716);
   font-family: "Saira SemiCondensed";
   font-size: 2rem;
   font-style: normal;
   font-weight: 900;
-  line-height: 120%; 
+  line-height: 120%;
   margin-top: -21px;
 }
-.card3{
-  position: relative;
-  top:-86px;
-  left: 93px;
-  transform: rotate(13.069deg);
-}
+
 .pgcont {
   position: relative;
   display: flex;
@@ -215,80 +228,80 @@ border: 1.8px solid var(--Light-Light--100, #FFF);
   width: 3.95px;
   height: 3.55px;
   position: absolute;
-  top:8em;
+  top: 8em;
   right: 12%;
 }
 .Eclp2 {
   width: 6.95px;
   height: 6.55px;
   position: absolute;
-  top:14.5rem;
+  top: 14.5rem;
   right: 50%;
 }
 .Eclp3 {
   width: 3.95px;
   height: 3.55px;
   position: absolute;
-  top:18rem;
-  right:52%;
+  top: 18rem;
+  right: 52%;
 }
 .Eclp4 {
   width: 12.95px;
   height: 12.55px;
   position: absolute;
-  top:22rem;
-  left:4%;
+  top: 22rem;
+  left: 4%;
 }
-.Eclp5{
+.Eclp5 {
   width: 3.55px;
   height: 3px;
   position: absolute;
-  top:10rem;
+  top: 10rem;
   right: 40%;
 }
-.Eclp6{
+.Eclp6 {
   width: 11.95px;
   height: 11.55px;
   position: absolute;
-  top:12.2rem;
+  top: 12.2rem;
   right: 12%;
 }
-.Eclp7{
+.Eclp7 {
   width: 6.95px;
   height: 6.55px;
   position: absolute;
-  top:17rem;
+  top: 17rem;
   right: 16%;
 }
-.Eclp8{
+.Eclp8 {
   width: 1.95px;
   height: 2.55px;
   position: absolute;
   top: 48rem;
   right: 25%;
 }
-.Eclp9{
+.Eclp9 {
   width: 7.95px;
   height: 7.55px;
   position: absolute;
   top: 36rem;
   right: 5%;
 }
-.Eclp10{
+.Eclp10 {
   width: 1.95px;
   height: 2.55px;
   position: absolute;
   top: 38rem;
   right: 4%;
 }
-.Eclp11{
+.Eclp11 {
   width: 12.95px;
   height: 12.55px;
   position: absolute;
   top: 45rem;
   left: 18%;
 }
-.Eclp12{
+.Eclp12 {
   width: 2.95px;
   height: 2.55px;
   position: absolute;
