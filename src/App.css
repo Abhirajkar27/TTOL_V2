@@ -61,6 +61,57 @@ transform: rotate(-13.069deg);
   line-height: 120%; /* 1.8rem */
   white-space:nowrap;
 }
+.Landing_activity_info{
+  color: var(--Light-Light--80, #E0E7F1);
+font-family: Gilroy;
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 500;
+line-height: 100%; /* 0.75rem */
+text-decoration-line: underline;
+}
+.Landing_buttons{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 12px;
+}
+.Landing_start{
+  font-weight: 700;
+display: flex;
+width: 13.625rem;
+padding: 0.9375rem 2rem;
+justify-content: center;
+align-items: center;
+gap: 0.625rem;
+border-radius: 0.75rem;
+background: var(--Primary-Primary-100, #C6FF00);
+border: none;
+}
+.Landing_activity{
+  color: white;
+  background: var(--Dark-Dark--100, #0E1928);
+  display: inline-flex;
+padding: 0.9375rem 2rem;
+justify-content: center;
+align-items: center;
+gap: 0.625rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+border: 1.8px solid var(--Light-Light--100, #FFF);
+}
+.activity_info{
+  margin-top: -61px;
+}
+.Landing_Upperdiv{
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 .Landing_TL{
   color: var(--Accent-Accent--03-Accent-03, #FBFF08);
   text-align: center;
@@ -72,6 +123,7 @@ transform: rotate(-13.069deg);
   font-style: normal;
   font-weight: 900;
   line-height: 120%; 
+  margin-top: -21px;
 }
 .card3{
   position: relative;
