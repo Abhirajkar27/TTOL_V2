@@ -29,7 +29,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: -2.06rem;
+  margin-top: -4.06rem;
 }
 .Landing_card {
   border: 2px solid black;
@@ -86,7 +86,7 @@ body {
 }
 .Landing_buttons {
   position: relative;
-  top:7rem ;
+  top:2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,11 +118,12 @@ body {
   border: 1.8px solid var(--Light-Light--100, #fff);
 }
 .activity_info {
-  margin-top: -61px;
+  margin-top: -85px;
+  margin-bottom: 2rem;
 }
-.Landing_Upperdiv {
+.Landing_Upperdiv{
   position: relative;
-  top: 6.69rem;
+  top: 4.69rem;
   display: flex;
   flex-direction: column;
   gap: 0px;
