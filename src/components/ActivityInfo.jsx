@@ -15,7 +15,6 @@ const ActivityInfo = (props) => {
                 <p style={{ textAlign: "left", margin: "0" }}><b style={{ color: "#FFF", fontWeight: "600" }}>Match:</b> They See your photo only after they take theirs. </p>
                 <p style={{ textAlign: "left", margin: "0" }}> <b style={{ color: "#FFF", fontWeight: "600" }}>Connect:</b> Reveal, react, and start chatting!</p>
             </div>
-
         </div>
     )
 }
