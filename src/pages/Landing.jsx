@@ -10,7 +10,7 @@ const Landing = () => {
         <p className='Landing_YB'>You both will love</p>
         <p className='Landing_TL'> 2 Truths and a lie</p>
       </div>
-      <div className='landing_cards'>
+      <div className={`landing_cards ${isShowActivityInfo?'margintop':''}`}>
         <Cards sign='?' className={'card1'} />
         <Cards sign='?' className={'card2'} />
         <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' />
