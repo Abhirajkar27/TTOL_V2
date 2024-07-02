@@ -73,6 +73,36 @@
 
 }
 
+.Back_card_two{
+    position: relative;
+    left: 82%;
+    width: 15rem;
+height: 26.0625rem;
+flex-shrink: 0;
+border-radius: 0.75rem;
+border: 1px solid var(--Neutral-Rich-Dark, #090909);
+
+box-shadow: 0px 2px 0px 0px #161716;
+}
+.pink{
+    background: var(--Accent-color-Acc-02, #FF55F8);
+}
+.green{
+    background: var(--Accent-color-Acc-01, #02FF89);
+}
+.Back_Card_one{
+    position: relative;
+    left: 44%;
+    top: 14px;
+    width: 17.375rem;
+height: 26.0625rem;
+flex-shrink: 0;
+border-radius: 0.75rem;
+border: 1px solid var(--Neutral-Rich-Dark, #090909);
+
+box-shadow: 0px 2px 0px 0px #161716;
+}
+
 .Card_options {
     margin: 34px auto;
     display: flex;

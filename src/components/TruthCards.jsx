@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TruthCards.css'; 
 import Truth_Options from './Truth_Options';
-const TruthCards = () => {
+const TruthCards = ({second=false,third=true}) => {
   const [isFocused, setIsFocused] = useState(false);
     const [tarr,setTarr]=useState(["I can't swim" , "I have a black belt in karate", "I make my own clothes","I've never tasted coffee", "I've accidentally texted a meme to my boss",  "I've ghosted a celebrity in DMs" ]);
     // "I enjoy playing basketball on weekends","I love watching science fiction movies over romantic one"
@@ -14,6 +14,9 @@ const TruthCards = () => {
   };
 
   return (
+    <>
+    <div className={`Back_card_two ${third?'pink':'green'}`}></div>
+    <div className={`Back_Card_one ${second?'pink':'green'}`} ></div>
     <div className='Card_Truth_Lie'>
       <p className="Card_heading">1st truth</p>
       <textarea
@@ -31,6 +34,7 @@ const TruthCards = () => {
   <path d="M12.7306 6.57361C12.7616 6.5647 12.7945 6.5647 12.8256 6.57361H15.0403L14.0665 7.34548C13.9429 7.44311 13.8631 7.58585 13.8448 7.7423C13.8264 7.89875 13.8709 8.05608 13.9686 8.1797C14.0662 8.30332 14.2089 8.38308 14.3654 8.40146C14.5218 8.41983 14.6792 8.3753 14.8028 8.27767L17.1125 6.44298C17.1818 6.38735 17.2378 6.31685 17.2762 6.23669C17.3147 6.15653 17.3347 6.06876 17.3347 5.97986C17.3347 5.89095 17.3147 5.80318 17.2762 5.72302C17.2378 5.64286 17.1818 5.57237 17.1125 5.51673L14.8028 3.68204C14.6792 3.58441 14.5218 3.53988 14.3654 3.55826C14.2089 3.57663 14.0662 3.6564 13.9686 3.78001C13.8709 3.90363 13.8264 4.06096 13.8448 4.21741C13.8631 4.37386 13.9429 4.5166 14.0665 4.61423L15.0403 5.38611H12.8256C10.5278 5.33861 9.06121 6.84079 7.93309 8.56267C6.63871 6.53204 5.15434 4.22829 2.25684 4.22829C2.09936 4.22829 1.94834 4.29085 1.83699 4.4022C1.72564 4.51355 1.66309 4.66457 1.66309 4.82204C1.66309 4.97952 1.72564 5.13054 1.83699 5.24189C1.94834 5.35324 2.09936 5.41579 2.25684 5.41579C4.69121 5.41579 5.93809 7.63642 7.2384 9.68486C5.93809 11.8758 4.68527 14.2864 2.25684 14.2508C2.09936 14.2508 1.94834 14.3133 1.83699 14.4247C1.72564 14.536 1.66309 14.6871 1.66309 14.8445C1.66309 15.002 1.72564 15.153 1.83699 15.2644C1.94834 15.3757 2.09936 15.4383 2.25684 15.4383C7.87371 15.4917 7.79059 6.77548 12.7306 6.57361Z" fill="white"/>
 </svg> New options</button>
     </div>
+    </>
   );
 };
 
