@@ -28,9 +28,9 @@
 }
 .close-activityInfo {
   flex-shrink: 0;
-  position: absolute;
-  right: 1.2rem;
-  top: 0.825rem;
+  position: relative;
+  right: -18.8rem;
+  top: -9.105rem;
   width: 0.9rem;
   height: 0.9rem;
   display: flex;
