@@ -1,0 +1,99 @@
+.Card_Truth_Lie {
+    margin-top: 72px;
+    z-index: 999;
+    width: 19.75rem;
+    height: 26.0625rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    border: 1px solid var(--Neutral-Rich-Dark, #090909);
+    background: var(--Accent-color-Acc-01, #02FF89);
+    box-shadow: 0px 2px 0px 0px #161716;
+}
+
+.Card_heading {
+    color: var(--Neutral-Rich-Dark, #090909);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Gilroy;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.Card_Text {
+    width: 17rem;
+    height: 7.5rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    border: 1px solid var(--Neutral-Dark-alpha-10, rgba(22, 23, 22, 0.10));
+    background: var(--Neutral-Dark-alpha-10, rgba(22, 23, 22, 0.10));
+    color: var(--Neutral-Dark-alpha-60, rgba(22, 23, 22, 0.60));
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Gilroy;
+    font-size: 1.1875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 1.425rem */
+    text-align: center;
+}
+
+.input-focused {
+    border: 2px solid var(--Neutral-Dark-alpha-60, rgba(22, 23, 22, 0.60));
+    ;
+    outline: none;
+}
+
+.Card_Text {
+    text-align: center;
+    line-height: 129px;
+}
+
+.Card_next_button {
+    display: inline-flex;
+    padding: 0.125rem 0.625rem;
+    align-items: center;
+    gap: 0.5625rem;
+    border-radius: 3.125rem;
+    background: var(--Dark-Dark--100, #0E1928);
+    color: white;
+    border: none;
+    font-weight: 100;
+}
+
+.Truth_Options {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--Neutral-Dark-alpha-80, rgba(22, 23, 22, 0.80));
+
+}
+
+.Card_options {
+    margin: 34px auto;
+    display: flex;
+    width: 18.25rem;
+    max-width: 18.25rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.textoption {
+    /* width: 4rem; */
+    height: 0.75rem;
+    color: var(--Neutral-Dark-alpha-80, rgba(22, 23, 22, 0.80));
+    text-align: center;
+    font-family: Gilroy;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    /* 0.75rem */
+}
