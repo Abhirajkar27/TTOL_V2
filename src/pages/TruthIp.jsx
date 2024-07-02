@@ -1,5 +1,6 @@
 import React from 'react';
 import './TruthIp.css';
+import TruthCards from '../components/TruthCards';
 
 const TruthIp = () => {
     return (
@@ -11,6 +12,7 @@ const TruthIp = () => {
                     <rect x="26" width="23" height="36" rx="3" fill="#79889D" />
                 </svg>
             </div>
+            <TruthCards/>
             <button className='nxtbtntp'><span className='nxtbtntp-txt'>Next</span></button>
         </div>
     )
