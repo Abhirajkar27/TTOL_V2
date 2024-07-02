@@ -121,7 +121,7 @@ const App = () => {
       <Eclipse class="Eclp11"/>
       <Eclipse class="Eclp12"/>
       {!isAddTruthPage &&<Landing onNext={()=>{setIsAddTruthPage(true);}}/>}
-      {isAddTruthPage && <TruthIp/>}
+      {isAddTruthPage && <TruthIp onClose={()=>{setIsAddTruthPage(false);}}/>}
     </div>
   );
 };
