@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Cards from '../components/Cards'
 import ActivityInfo from "../components/ActivityInfo";
-const Landing = () => {
+const Landing = (props) => {
   const [isShowActivityInfo, setISShowActivityInfo] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ const Landing = () => {
         <p className='Landing_activity_info' onClick={() => { setISShowActivityInfo(true); }}>Activity info</p>
       </div>}
       <div className={`Landing_buttons ${isShowActivityInfo?'lbmargintop':''}`}>
-        <button className='Landing_start'>Start</button>
+        <button className='Landing_start' onClick={props.onNext}>Start</button>
         <button className='Landing_activity'>choose another activity</button>
       </div>
     </div>

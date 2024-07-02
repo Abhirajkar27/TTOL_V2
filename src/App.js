@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Eclipse from "./components/Eclipse";
-import Cards from "./components/Cards";
-import TruthCards from "./components/TruthCards";
 import Landing from "./pages/Landing";
 import TruthIp from "./pages/TruthIp";
 
 
 const App = () => {
+  const [isAddTruthPage, setIsAddTruthPage] = useState(false);
+
   return (
     <div className="pgcont">
       <div className="bgpg1">
@@ -120,7 +120,8 @@ const App = () => {
       <Eclipse class="Eclp10"/>
       <Eclipse class="Eclp11"/>
       <Eclipse class="Eclp12"/>
-      <TruthIp/>
+      {!isAddTruthPage &&<Landing onNext={()=>{setIsAddTruthPage(true);}}/>}
+      {isAddTruthPage && <TruthIp/>}
     </div>
   );
 };
