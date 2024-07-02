@@ -4,6 +4,7 @@
   justify-content: center;
   flex-direction: column;
   margin-top: -3.5rem;
+  position: relative;
 }
 .Card_Truth_Lie {
   position: relative;
@@ -44,9 +45,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  /* 1.425rem */
   text-align: center;
-
+  box-sizing: border-box;
+  padding: 2.5rem;
 }
 
 .input-focused {
@@ -54,10 +55,7 @@
   outline: none;
 }
 
-.Card_Text {
-  text-align: center;
-  line-height: 129px;
-}
+
 
 .Card_next_button {
   display: inline-flex;
