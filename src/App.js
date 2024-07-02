@@ -4,6 +4,7 @@ import Eclipse from "./components/Eclipse";
 import Cards from "./components/Cards";
 import TruthCards from "./components/TruthCards";
 import Landing from "./pages/Landing";
+import TruthIp from "./pages/TruthIp";
 
 
 const App = () => {
@@ -119,7 +120,7 @@ const App = () => {
       <Eclipse class="Eclp10"/>
       <Eclipse class="Eclp11"/>
       <Eclipse class="Eclp12"/>
-      <TruthCards/>
+      <TruthIp/>
     </div>
   );
 };
