@@ -1,4 +1,7 @@
 .Activity-info-box {
+  position: fixed;
+  top: 27.75rem;
+  left:1.25rem;
   display: flex;
   width: 20rem;
   height: 10.0625rem;

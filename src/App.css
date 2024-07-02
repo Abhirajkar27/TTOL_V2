@@ -29,7 +29,8 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: -4.06rem;
+  /* margin-top: -4.06rem; */
+  margin-bottom: 1rem;
 }
 .Landing_card {
   border: 2px solid black;
@@ -38,7 +39,7 @@ body {
   flex-shrink: 0;
   border-radius: 0.75rem;
   position: relative;
-  z-index: 10;
+  /* z-index: 10; */
 }
 .card1 {
   position: relative;
