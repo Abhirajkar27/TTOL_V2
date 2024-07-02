@@ -1,3 +1,10 @@
+.crd-stk{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -3.5rem;
+}
 .Card_Truth_Lie {
   position: relative;
   margin-top: -45rem;
