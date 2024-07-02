@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Cards from '../components/Cards'
+import ActivityInfo from "../components/ActivityInfo";
 const Landing = () => {
+  const [isShowActivityInfo, setISShowActivityInfo] = useState(false);
+
   return (
     <div>
       <div className="Landing_Upperdiv">
@@ -12,9 +15,10 @@ const Landing = () => {
         <Cards sign='?' className={'card2'} />
         <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' />
       </div>
-      <div className="activity_info">
-        <p className='Landing_activity_info'>Activity info</p>
-      </div>
+      {isShowActivityInfo && <ActivityInfo onClose={() => { setISShowActivityInfo(false);}}/>}
+      {!isShowActivityInfo && <div className="activity_info">
+        <p className='Landing_activity_info' onClick={() => { setISShowActivityInfo(true); }}>Activity info</p>
+      </div>}
       <div className="Landing_buttons">
         <button className='Landing_start'>Start</button>
         <button className='Landing_activity'>choose another activity</button>

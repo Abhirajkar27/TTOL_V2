@@ -4,6 +4,7 @@ import Eclipse from "./components/Eclipse";
 import Cards from "./components/Cards";
 import Landing from "./pages/Landing";
 
+
 const App = () => {
   return (
     <div className="pgcont">

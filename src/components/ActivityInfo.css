@@ -1,0 +1,40 @@
+.Activity-info-box {
+  display: flex;
+  width: 20rem;
+  height: 10.0625rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: var(--large, 0.75rem);
+  background: var(--Dark-Dark--70, #384353);
+}
+.acib-topo {
+  width: 18rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 1rem;
+  color: var(--Light-Light--70, #bcc9da);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Gilroy;
+  font-size: 1.02rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 0.6rem;
+}
+.close-activityInfo {
+  flex-shrink: 0;
+  position: absolute;
+  right: 1.2rem;
+  top: 0.825rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  display: flex;
+  padding: 0.25rem;
+  justify-content: center;
+  align-items: center;
+}
