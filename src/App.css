@@ -108,10 +108,11 @@ body {
   margin-bottom: 2rem;
 }
 .lanmargintop{
-  margin-top: -10.8rem !important;
+  margin-top: -12.8rem !important;
 }
 .lbmargintop{
   top:-.01rem;
+  margin-top: 1.5rem;
 }
 .Landing_Upperdiv{
   position: relative;
@@ -122,6 +123,9 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+}
+.updmargintop{
+  top: 1.69rem;
 }
 .Landing_YB {
   color: var(--Neutral-Light, #fff);

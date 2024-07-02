@@ -6,7 +6,7 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="Landing_Upperdiv">
+      <div className={`Landing_Upperdiv ${isShowActivityInfo?'updmargintop':''}`}>
         <p className='Landing_YB'>You both will love</p>
         <p className='Landing_TL'> 2 Truths and a lie</p>
       </div>
