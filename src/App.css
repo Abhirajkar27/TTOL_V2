@@ -107,6 +107,9 @@ body {
   margin-top: -85px;
   margin-bottom: 2rem;
 }
+.margintop{
+  margin-top: -9.5rem !important;
+}
 .Landing_Upperdiv{
   position: relative;
   top: 4.69rem;
