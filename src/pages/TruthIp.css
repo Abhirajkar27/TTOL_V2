@@ -30,6 +30,7 @@
   position: relative;
   margin-bottom: 1rem;
   margin-top: 9rem;
+  cursor: not-allowed;
 }
 .nxtbtntp-txt {
   color: var(--Neutral-Rich-Dark, #090909);
@@ -39,4 +40,15 @@
   font-weight: 700;
   line-height: 100%;
   opacity: 0.3;
+  
+}
+.enable-next{
+  opacity: 1;
+  font-weight: bold; 
+}
+.tick-onfirst{
+ width: 0.875rem;
+ height: 0.875rem;
+ fill: var(--Neutral-Dark-alpha-10, rgba(22, 23, 22, 0.10));
+ z-index: 9999;
 }
