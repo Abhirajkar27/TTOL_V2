@@ -52,8 +52,8 @@ const TruthIp = (props) => {
                     <rect x="26" width="23" height="36" rx="3" fill={`${truth1 && (canMove || truth2) ? "#02FF89" : "#526175"}`} />
                 </svg>
             </div>
-            <TruthCards setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-            <button className={`nxtbtntp`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>Next</span></button>
+            <TruthCards back={truth2?false:true} third={truth2?false:truth1?false:true} second={truth2?false:truth1} text={truth2?'Enter a lie':truth1?'2nd truth':'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+            <button  className={`nxtbtntp`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>Next</span></button>
         </div>
     )
 }

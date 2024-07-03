@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
 
-const TruthCards = ({ second = false, third = true , setCanMove, selectedOption, setSelectedOption}) => {
+const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [tarr, setTarr] = useState([
     "I can't swim",
@@ -39,8 +39,8 @@ const TruthCards = ({ second = false, third = true , setCanMove, selectedOption,
       <div className="crd-stk">
         <div className={`Back_card_two ${third ? 'pink' : 'green'}`}></div>
         <div className={`Back_Card_one ${second ? 'pink' : 'green'}`}></div>
-        <div className='Card_Truth_Lie'>
-          <p className="Card_heading">1st truth</p>
+        <div className='Card_Truth_Lie' style={!back?{backgroundColor:'#FF55F8'}:{backgroundColor:'#02FF89'}}>
+          <p className="Card_heading">{text}</p>
           <textarea
             type="text"
             className={`Card_Text ${isFocused ? 'input-focused' : ''}`}
