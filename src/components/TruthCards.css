@@ -6,21 +6,7 @@
   margin-top: -3.5rem;
   position: relative;
 }
-.tick_svg{
-  position: relative;
-  top: 41px;
-  right: 12px;
-}
-.tick_svg2{
-  position: relative;
-  top: 32px;
-  right: 0px;
-}
-.tick_svg3{
-  position: relative;
-  top: 41px;
-  right: -10px;
-}
+
 .Card_Truth_Lie {
   position: relative;
   margin-top: -45rem;
