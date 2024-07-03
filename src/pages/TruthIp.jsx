@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './TruthIp.css';
 import TruthCards from '../components/TruthCards';
+import AddNote from '../components/AddNote';
 
 const TruthIp = (props) => {
     const [canMove, setCanMove] = useState(false);
@@ -23,7 +24,7 @@ const TruthIp = (props) => {
     }, [truthOrLie]);
 
     function handleNextClick() {
-        if (truthOrLie.length != 3) {
+        if (truthOrLie.length !== 3) {
             setTruthOrLie([...truthOrLie, selectedOption]);
             setSelectedOption('');
         }
@@ -53,7 +54,8 @@ const TruthIp = (props) => {
                 </svg>
             </div>
             <TruthCards back={truth2?false:true} third={truth2?false:truth1?false:true} second={truth2?false:truth1} text={truth2?'Enter a lie':truth1?'2nd truth':'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-            <button  className={`nxtbtntp`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>Next</span></button>
+            {truth2 && <AddNote/>}
+            <button  className={`nxtbtntp ${truth2?'nxtbtntp-lt':''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2?'Send':'Next'}</span></button>
         </div>
     )
 }

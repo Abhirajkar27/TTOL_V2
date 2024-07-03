@@ -33,6 +33,9 @@
   margin-top: 9rem;
   cursor: not-allowed;
 }
+.nxtbtntp-lt{
+  margin-top: 7.6rem;
+}
 .nxtbtntp-txt {
   color: var(--Neutral-Rich-Dark, #090909);
   font-family: Gilroy;

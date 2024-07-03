@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
-import AddNote from './AddNote';
 
 const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption}) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -50,7 +49,7 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
             onChange={(e) => setSelectedOption(e.target.value)}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            style={{ textAlign: 'center', lineHeight: 'normal' }}
+            style={{ textAlign: 'center', lineHeight: 'normal' , resize:"none"}}
           />
           <div className='Card_options'>
             {tarr.map((element, index) => (

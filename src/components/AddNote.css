@@ -1,7 +1,33 @@
-.Lie_AddNote{
-    width: 19.75rem;
-height: 2.5625rem;
-flex-shrink: 0;
-border-radius: 0.75rem;
-background: var(--Dark-Dark--60, #526175);
+.Lie_AddNote {
+  width: 19.75rem;
+  height: 2.5625rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  background: var(--Dark-Dark--60, #526175);
+  box-sizing: border-box;
+  padding: .7rem;
+  position: relative;
+  margin-bottom: -2.5rem;
+  color: var(--Light-Light--70, #BCC9DA);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Gilroy;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.05rem */
+}
+
+.Lie_AddNote:focus{
+  outline: none;
+  border: none;
+}
+
+.Lie_AddNote::placeholder {
+  color: var(--Light-Light--70, #BCC9DA);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Gilroy;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.05rem */
 }

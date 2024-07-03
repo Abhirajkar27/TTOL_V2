@@ -68,6 +68,7 @@
   color: white;
   border: none;
   font-weight: 100;
+  margin-bottom: 1rem ;
 }
 
 .Truth_Options {
@@ -112,6 +113,7 @@
   display: flex;
   width: 18.25rem;
   max-width: 18.25rem;
+  max-height: 8rem;
   justify-content: center;
   align-items: center;
   align-content: center;
