@@ -1,0 +1,7 @@
+.Lie_AddNote{
+    width: 19.75rem;
+height: 2.5625rem;
+flex-shrink: 0;
+border-radius: 0.75rem;
+background: var(--Dark-Dark--60, #526175);
+}
