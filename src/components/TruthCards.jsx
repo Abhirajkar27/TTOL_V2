@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
 
-const TruthCards = ({ second = false, third = true }) => {
+const TruthCards = ({ second = false, third = true , setCanMove}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [tarr, setTarr] = useState([
     "I can't swim",
@@ -27,9 +27,12 @@ const TruthCards = ({ second = false, third = true }) => {
   };
 
   const handleNewOptionsClick = () => {
-    // Replace with logic to fetch new options or update the options list
     console.log('Fetching new options...');
   };
+
+  useEffect(()=>{
+    selectedOption ? setCanMove(true):setCanMove(false);
+  },[selectedOption]);
 
   return (
     <>
@@ -47,7 +50,6 @@ const TruthCards = ({ second = false, third = true }) => {
             onFocus={handleFocus}
             onBlur={handleBlur}
             style={{ textAlign: 'center', lineHeight: 'normal' }}
-           
           />
           <div className='Card_options'>
             {tarr.map((element, index) => (
