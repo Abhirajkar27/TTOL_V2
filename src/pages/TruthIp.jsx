@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './TruthIp.css';
 import TruthCards from '../components/TruthCards';
 
@@ -8,8 +8,25 @@ const TruthIp = (props) => {
     const [truth1, setTruth1] = useState(false);
     const [truth2, setTruth2] = useState(false);
     const [lie, setLie] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('');
+
+    useEffect(() => {
+        if (truthOrLie.length === 1) {
+            setTruth1(true);
+        }
+        else if (truthOrLie.length === 2) {
+            setTruth2(true);
+        }
+        else if (truthOrLie.length === 3) {
+            setLie(true);
+        }
+    }, [truthOrLie]);
+
     function handleNextClick() {
-        console.log("Next Button Working");
+        if (truthOrLie.length != 3) {
+            setTruthOrLie([...truthOrLie, selectedOption]);
+            setSelectedOption('');
+        }
     }
     return (
         <div className='truthIPPage'>
@@ -30,12 +47,12 @@ const TruthIp = (props) => {
                     <path d="M4 7L6 9L10 5" stroke="#161716" stroke-opacity="0.8" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 47" fill="none">
-                    <rect y="11.9526" width="23" height="36" rx="3" transform="rotate(-15 0 11.9526)" fill={`${canMove || truth1  ? "#02FF89" : "#526175"}`}/>
-                    <rect width="23" height="36" rx="3" transform="matrix(-0.965926 -0.258819 -0.258819 0.965926 74.5337 11.9526)" fill={`${(truth1 && truth2) && (canMove || lie)  ? "#FF55F8" : "#526175"}`} />
-                    <rect x="26" width="23" height="36" rx="3" fill={`${truth1 && (canMove || truth2)? "#02FF89" : "#526175"}`} />
+                    <rect y="11.9526" width="23" height="36" rx="3" transform="rotate(-15 0 11.9526)" fill={`${canMove || truth1 ? "#02FF89" : "#526175"}`} />
+                    <rect width="23" height="36" rx="3" transform="matrix(-0.965926 -0.258819 -0.258819 0.965926 74.5337 11.9526)" fill={`${(truth1 && truth2) && (canMove || lie) ? "#FF55F8" : "#526175"}`} />
+                    <rect x="26" width="23" height="36" rx="3" fill={`${truth1 && (canMove || truth2) ? "#02FF89" : "#526175"}`} />
                 </svg>
             </div>
-            <TruthCards setCanMove={setCanMove} />
+            <TruthCards setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
             <button className={`nxtbtntp`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>Next</span></button>
         </div>
     )

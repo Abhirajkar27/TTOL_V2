@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
 
-const TruthCards = ({ second = false, third = true , setCanMove}) => {
+const TruthCards = ({ second = false, third = true , setCanMove, selectedOption, setSelectedOption}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [tarr, setTarr] = useState([
     "I can't swim",
@@ -12,7 +12,7 @@ const TruthCards = ({ second = false, third = true , setCanMove}) => {
     "I've accidentally texted a meme to my boss",
     "I've ghosted a celebrity in DMs",
   ]);
-  const [selectedOption, setSelectedOption] = useState('');
+  
 
   const handleFocus = () => {
     setIsFocused(true);
