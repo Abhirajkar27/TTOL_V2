@@ -28,9 +28,8 @@
   gap: 0.625rem;
   border-radius: 0.75rem;
   background: var(--Primary-Primary-100, #c6ff00);
-  position: relative;
-  margin-bottom: 1rem;
-  margin-top: 9rem;
+  position: fixed;
+  bottom: 2rem;
   cursor: not-allowed;
 }
 .nxtbtntp-lt{
