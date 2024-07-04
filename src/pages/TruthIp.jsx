@@ -60,4 +60,4 @@ const TruthIp = (props) => {
     )
 }
 
-export default TruthIp
+export default TruthIp;
