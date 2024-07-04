@@ -87,6 +87,8 @@ body {
   font-weight: 700;
   display: flex;
   width: 13.625rem;
+  /* width:52.76vw;
+  height: 5.9vh; */
   padding: 0.9375rem 2rem;
   justify-content: center;
   align-items: center;
@@ -96,6 +98,7 @@ body {
   border: none;
 }
 .Landing_activity {
+  
   color: white;
   background: var(--Dark-Dark--100, #0e1928);
   display: inline-flex;
@@ -112,10 +115,10 @@ body {
   margin-bottom: 2rem;
 }
 .lanmargintop{
-  margin-top: -12.8rem !important;
+  /* margin-top: -12.8rem !important; */
+  margin-top: -26vh !important;
 }
-.lbmargintop{
-}
+
 .Landing_Upperdiv{
   position: relative;
   top: 4.69rem;
@@ -322,4 +325,10 @@ body {
   position: absolute;
   top: 49.3rem;
   left: 10%;
+}
+
+@media (max-height: 750px) {
+  .lanmargintop {
+    margin-bottom: -2vh !important;
+  }
 }
