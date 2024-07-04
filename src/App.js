@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './assets/fonts/styles/fonts.css';
 import "./App.css";
 import Eclipse from "./components/Eclipse";
 import Landing from "./pages/Landing";
