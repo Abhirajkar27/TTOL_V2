@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
 
-const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption}) => {
+const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption, TL}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [tarr, setTarr] = useState([
     "I can't swim",
@@ -24,6 +24,7 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
+    setIsFocused(true);
   };
 
   const handleNewOptionsClick = () => {
@@ -44,7 +45,7 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
           <textarea
             type="text"
             className={`Card_Text ${isFocused ? 'input-focused' : ''}`}
-            placeholder='Enter the truth'
+            placeholder={`Enter the ${TL}`}
             value={selectedOption}
             onChange={(e) => setSelectedOption(e.target.value)}
             onFocus={handleFocus}

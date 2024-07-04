@@ -58,9 +58,12 @@
   overflow: hidden;
 }
 
+
 .input-focused {
   border: 2px solid var(--Neutral-Dark-alpha-60, rgba(22, 23, 22, 0.6));
   outline: none;
+  font-weight: 600;
+  color: var(--Neutral-Rich-Dark, #090909);
 }
 
 
