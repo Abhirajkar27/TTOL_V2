@@ -21,7 +21,9 @@
 
 .nxtbtntp {
   display: flex;
-  width: 13.625rem;
+  /* width: 13.625rem; */
+  width: 56.5vw;
+  height: 5.6vh;
   padding: 0.9375rem 2rem;
   justify-content: center;
   align-items: center;
@@ -43,7 +45,6 @@
   font-weight: 700;
   line-height: 100%;
   opacity: 0.3;
-  
 }
 .enable-next{
   opacity: 1;

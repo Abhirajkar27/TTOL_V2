@@ -7,6 +7,11 @@ body {
   background: var(--Dark-Dark--100, #0e1928);
   overflow: hidden;
 }
+.TTOL-landing{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .Landing_card_sign {
   position: relative;
   top: -85px;
@@ -70,14 +75,13 @@ body {
   text-decoration-line: underline;
 }
 .Landing_buttons {
-  position: relative;
-  top:4.5rem;
+  position: fixed;
+  bottom:1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin: auto;
 }
 .Landing_start {
   font-weight: 700;
@@ -111,8 +115,6 @@ body {
   margin-top: -12.8rem !important;
 }
 .lbmargintop{
-  top:-.01rem;
-  margin-top: 1.5rem;
 }
 .Landing_Upperdiv{
   position: relative;

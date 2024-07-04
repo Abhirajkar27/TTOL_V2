@@ -1,6 +1,8 @@
 .Lie_AddNote {
-  width: 19.75rem;
-  height: 2.5625rem;
+  /* width: 19.75rem; */
+  width: 79.4vw;
+  /* height: 2.5625rem; */
+  height: 4.85vh;
   flex-shrink: 0;
   border-radius: 0.75rem;
   background: var(--Dark-Dark--60, #526175);
@@ -15,6 +17,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 1.05rem */
+  overflow: hidden;
 }
 
 .Lie_AddNote:focus{

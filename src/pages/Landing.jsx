@@ -5,7 +5,7 @@ const Landing = (props) => {
   const [isShowActivityInfo, setISShowActivityInfo] = useState(false);
 
   return (
-    <div>
+    <div className='TTOL-landing'>
       <div className={`Landing_Upperdiv ${isShowActivityInfo?'updmargintop':''}`}>
         <p className='Landing_YB'>You both will love</p>
         <p className='Landing_TL'> 2 Truths and a lie</p>
