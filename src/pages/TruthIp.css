@@ -4,8 +4,9 @@
   align-items: center;
 }
 .swiper_container{
-  width: 350px !important;
+  width: 100vw;
 }
+
 .backbtnTTOL {
   width: 1.5rem;
   height: 1.5rem;
