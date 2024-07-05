@@ -1,4 +1,13 @@
 import React, { useEffect, useState } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import './TruthIp.css';
 import TruthCards from '../components/TruthCards';
 import AddNote from '../components/AddNote';
@@ -53,9 +62,44 @@ const TruthIp = (props) => {
                     <rect x="26" width="23" height="36" rx="3" fill={`${truth1 && (canMove || truth2) ? "#02FF89" : "#526175"}`} />
                 </svg>
             </div>
-            <TruthCards TL={'truth'} back={true}  text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-            <TruthCards TL={'truth'} back={true}  text={'2st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-            <TruthCards TL={'lie'} back={false}  text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+
+            <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        spaceBetween={'0'}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0, // Adjust this value to bring slides closer
+    depth: 5, // Reduce depth to bring slides closer
+    modifier: 1, // Adjust modifier to tweak the effect
+        }}
+        pagination={{ el: '.swiper-pagination', clickable: true }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true,
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="swiper_container"
+      >
+        <SwiperSlide>
+        <TruthCards TL={'truth'} back={true}  text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+        </SwiperSlide>
+        <SwiperSlide>
+        <TruthCards TL={'truth'} back={true}  text={'2st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+        </SwiperSlide>
+        <SwiperSlide>
+        <TruthCards TL={'lie'} back={false}  text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+        </SwiperSlide>
+        </Swiper>
+            
+            
+            
+            
+            
             {/* {truth2 && <AddNote/>} */}
             <button  className={`nxtbtntp ${truth2?'nxtbtntp-lt':''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2?'Send':'Next'}</span></button>
         </div>
