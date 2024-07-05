@@ -54,7 +54,7 @@
   text-align: center;
   box-sizing: border-box;
   /* padding: 10%; */
-  padding: 5vh;
+  padding: 5vh 1.3vh;
   overflow: hidden;
 }
 

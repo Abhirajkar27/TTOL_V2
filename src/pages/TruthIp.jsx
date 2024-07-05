@@ -54,7 +54,7 @@ const TruthIp = (props) => {
                 </svg>
             </div>
             <TruthCards TL={truth2?'lie':'truth'} back={truth2?false:true} third={truth2?false:truth1?false:true} second={truth2?false:truth1} text={truth2?'Enter a lie':truth1?'2nd truth':'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-            {truth2 && <AddNote/>}
+            {/* {truth2 && <AddNote/>} */}
             <button  className={`nxtbtntp ${truth2?'nxtbtntp-lt':''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2?'Send':'Next'}</span></button>
         </div>
     )

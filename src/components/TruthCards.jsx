@@ -14,7 +14,10 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
   ]);
 
   const handleChange = (event) => {
-    const value = event.target.value;
+    let value = event.target.value;
+    if (value.length > 68) {
+      value = value.slice(0, 68); 
+    }
     const lineCount = value.split('\n').length;
     if (lineCount <= 4) {
       const trimmedValue = value.replace(/^\s+/g, '');
@@ -59,7 +62,6 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
             onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            rows={4} 
             style={{ textAlign: 'center', lineHeight: 'normal' , resize:"none"}}
           />
           <div className='Card_options'>
