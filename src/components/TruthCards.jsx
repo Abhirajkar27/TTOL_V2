@@ -49,8 +49,8 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
   return (
     <>
       <div className="crd-stk">
-        <div className={`Back_card_two ${third ? 'pink' : 'green'}`}></div>
-        <div className={`Back_Card_one ${second ? 'pink' : 'green'}`}></div>
+        {/* <div className={`Back_card_two ${third ? 'pink' : 'green'}`}></div> */}
+        {/* <div className={`Back_Card_one ${second ? 'pink' : 'green'}`}></div> */}
         <div className='Card_Truth_Lie' style={!back?{backgroundColor:'#FF55F8'}:{backgroundColor:'#02FF89'}}>
           <p className="Card_heading">{text}</p>
           <textarea

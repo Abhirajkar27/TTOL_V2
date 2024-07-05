@@ -53,7 +53,9 @@ const TruthIp = (props) => {
                     <rect x="26" width="23" height="36" rx="3" fill={`${truth1 && (canMove || truth2) ? "#02FF89" : "#526175"}`} />
                 </svg>
             </div>
-            <TruthCards TL={truth2?'lie':'truth'} back={truth2?false:true} third={truth2?false:truth1?false:true} second={truth2?false:truth1} text={truth2?'Enter a lie':truth1?'2nd truth':'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+            <TruthCards TL={'truth'} back={true}  text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+            <TruthCards TL={'truth'} back={true}  text={'2st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+            <TruthCards TL={'lie'} back={false}  text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
             {/* {truth2 && <AddNote/>} */}
             <button  className={`nxtbtntp ${truth2?'nxtbtntp-lt':''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2?'Send':'Next'}</span></button>
         </div>

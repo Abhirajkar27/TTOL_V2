@@ -5,7 +5,7 @@ body {
   height: 100%;
   flex-shrink: 0;
   background: var(--Dark-Dark--100, #0e1928);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .TTOL-landing{
   display: flex;
