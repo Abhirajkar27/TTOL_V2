@@ -10,6 +10,7 @@ const TruthIp = (props) => {
     const [truth2, setTruth2] = useState(false);
     const [lie, setLie] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
+    const [isFocused, setIsFocused] = useState(false);
 
     useEffect(() => {
         if (truthOrLie.length === 1) {
@@ -27,6 +28,9 @@ const TruthIp = (props) => {
         if (truthOrLie.length !== 3) {
             setTruthOrLie([...truthOrLie, selectedOption]);
             setSelectedOption('');
+            setIsFocused(false);
+            document.getElementById('styled-textarea').innerText = '';
+            document.getElementById('styled-textarea').setAttribute('placeholder', `Enter the ${truth2 ? 'lie' : 'truth'}`);
         }
     }
     return (
@@ -53,9 +57,9 @@ const TruthIp = (props) => {
                     <rect x="26" width="23" height="36" rx="3" fill={`${truth1 && (canMove || truth2) ? "#02FF89" : "#526175"}`} />
                 </svg>
             </div>
-            <TruthCards TL={truth2?'lie':'truth'} back={truth2?false:true} third={truth2?false:truth1?false:true} second={truth2?false:truth1} text={truth2?'Enter a lie':truth1?'2nd truth':'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-            {truth2 && <AddNote/>}
-            <button  className={`nxtbtntp ${truth2?'nxtbtntp-lt':''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2?'Send':'Next'}</span></button>
+            <TruthCards TL={truth2 ? 'lie' : 'truth'} back={truth2 ? false : true} third={truth2 ? false : truth1 ? false : true} second={truth2 ? false : truth1} text={truth2 ? 'Enter a lie' : truth1 ? '2nd truth' : '1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} isFocused={isFocused} setIsFocused={setIsFocused} />
+            {truth2 && <AddNote />}
+            <button className={`nxtbtntp ${truth2 ? 'nxtbtntp-lt' : ''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2 ? 'Send' : 'Next'}</span></button>
         </div>
     )
 }

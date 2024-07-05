@@ -7,7 +7,7 @@
   /* width: 20rem; */
   width: 80.5vw;
   /* height: 10.0625rem; */
-  height: 41.1vw;
+  height: 20vh;
   padding: 1rem;
   justify-content: center;
   align-items: flex-end;
@@ -50,3 +50,9 @@
   justify-content: center;
   align-items: center;
 }
+
+/* @media (min-height:910px) {
+  .Activity-info-box{
+    height: 20vh;
+  }  
+} */

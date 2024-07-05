@@ -15,6 +15,7 @@ body {
 .Landing_card_sign {
   position: relative;
   top: -85px;
+  top: -9vh;
   color: var(--Neutral-Light, #fff);
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
@@ -327,8 +328,13 @@ body {
   left: 10%;
 }
 
-@media (max-height: 750px) {
+@media (max-height: 770px) {
   .lanmargintop {
     margin-bottom: -2vh !important;
+  }
+}
+@media (min-height: 880px) {
+  .lanmargintop {
+    margin-bottom: 8vh !important;
   }
 }

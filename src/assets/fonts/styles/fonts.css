@@ -9,5 +9,10 @@
     src: url('../gilroy/Radomir\ Tinkov\ -\ Gilroy-Regular.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Cinema Groovy';
+    src: url('../cinema-groovy/CinemaGroovy-Regular.woff') format('WOFF');
+}
+
 
 
