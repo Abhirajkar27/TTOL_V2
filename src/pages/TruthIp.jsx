@@ -67,15 +67,15 @@ const TruthIp = (props) => {
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
-                loop={true}
+                loop={false}
                 spaceBetween={'0'}
                 slidesPerView={'1.12'}
                 coverflowEffect={{
                     rotate: 0,
-                    stretch: 0, 
+                    stretch: 0,
                     depth: 0,
-                    modifier: 0, 
-                    slideShadows:false,
+                    modifier: 0,
+                    slideShadows: false,
                 }}
                 pagination={{ el: '.swiper-pagination', clickable: true }}
                 navigation={{
@@ -96,10 +96,6 @@ const TruthIp = (props) => {
                     <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
                 </SwiperSlide>
             </Swiper>
-
-
-
-
 
             {/* {truth2 && <AddNote/>} */}
             <button className={`nxtbtntp ${truth2 ? 'nxtbtntp-lt' : ''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2 ? 'Send' : 'Next'}</span></button>
