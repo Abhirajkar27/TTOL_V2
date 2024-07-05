@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
 
-const TruthCards = ({ back, second = false, third = false, text, setCanMove, selectedOption, setSelectedOption, TL, isFocused, setIsFocused }) => {
-
-  const [plhdr, setPlhdr] = useState(`Enter the ${TL}`);
+const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption, TL}) => {
+  const [isFocused, setIsFocused] = useState(false);
   const [tarr, setTarr] = useState([
     "I can't swim",
     "I have a black belt in karate",
@@ -14,59 +13,55 @@ const TruthCards = ({ back, second = false, third = false, text, setCanMove, sel
     "I've ghosted a celebrity in DMs",
   ]);
 
-
+  const handleChange = (event) => {
+    const value = event.target.value;
+    const lineCount = value.split('\n').length;
+    if (lineCount <= 4) {
+      const trimmedValue = value.replace(/^\s+/g, '');
+      setSelectedOption(trimmedValue);
+    }
+  };
+ 
   const handleFocus = () => {
     setIsFocused(true);
-    setPlhdr('');
   };
 
   const handleBlur = () => {
     setIsFocused(false);
-    selectedOption ? setPlhdr(``) : setPlhdr(`Enter the ${TL}`);
   };
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsFocused(true);
-    setPlhdr('');
-    document.getElementById('styled-textarea').innerText = option;
   };
 
   const handleNewOptionsClick = () => {
     console.log('Fetching new options...');
   };
 
-  useEffect(() => {
-    selectedOption ? setCanMove(true) : setCanMove(false);
-  }, [selectedOption]);
+  useEffect(()=>{
+    selectedOption ? setCanMove(true):setCanMove(false);
+  },[selectedOption]);
 
   return (
     <>
       <div className="crd-stk">
         <div className={`Back_card_two ${third ? 'pink' : 'green'}`}></div>
         <div className={`Back_Card_one ${second ? 'pink' : 'green'}`}></div>
-        <div className='Card_Truth_Lie' style={!back ? { backgroundColor: '#FF55F8' } : { backgroundColor: '#02FF89' }}>
+        <div className='Card_Truth_Lie' style={!back?{backgroundColor:'#FF55F8'}:{backgroundColor:'#02FF89'}}>
           <p className="Card_heading">{text}</p>
-          {/* <textarea
+          <textarea
             type="text"
             className={`Card_Text ${isFocused ? 'input-focused' : ''}`}
             placeholder={`Enter the ${TL}`}
             value={selectedOption}
-            onChange={(e) => setSelectedOption(e.target.value)}
+            // onChange={(e) => setSelectedOption(e.target.value)}
+            onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            style={{resize:"none"}}
-          /> */}
-          <div
-            id="styled-textarea"
-            contentEditable="true"
-            className={`Card_Text ${isFocused ? 'input-focused' : ''}`}
-            value={selectedOption}
-            placeholder={plhdr}
-            onInput={(e) => setSelectedOption(e.target.innerText)}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-          ></div>
+            rows={4} 
+            style={{ textAlign: 'center', lineHeight: 'normal' , resize:"none"}}
+          />
           <div className='Card_options'>
             {tarr.map((element, index) => (
               <Truth_Options key={index} text={element} onClick={() => handleOptionClick(element)} />
