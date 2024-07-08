@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import './SendPage.css'
 import Cards from '../components/Cards'
 import AddNote from '../components/AddNote';
 const SendPage = (props) => {
@@ -26,7 +25,7 @@ const SendPage = (props) => {
         <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' />
       </div>
 <AddNote />
-<button className={`nxtbtntp`} onClick={()=>console.log(9)} ><span className={`nxtbtntp-txt`}>Send</span></button>
+<button className={`nxtbtntp`} onClick={()=>props.onforw()} ><span className={`nxtbtntp-txt`}>Send</span></button>
     </div>
   )
 }

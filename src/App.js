@@ -5,6 +5,7 @@ import Eclipse from "./components/Eclipse";
 import Landing from "./pages/Landing";
 import TruthIp from "./pages/TruthIp";
 import SendPage from "./pages/SendPage";
+import Disclosure from './pages/Disclosure';
 
 
 const App = () => {
@@ -17,7 +18,10 @@ const App = () => {
       content = <TruthIp onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
       break;
     case 1:
-      content = <SendPage onBack={()=>{setIndex(0);}}/>;
+      content = <SendPage onBack={()=>{setIndex(0);}} onforw={()=>{setIndex(2);}}/>;
+      break;
+    case 2:
+      content = <Disclosure/>;
       break;
     default:
       content = <Landing onNext={()=>{setIndex(0);}}/>;
