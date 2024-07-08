@@ -166,7 +166,7 @@
   background:  var(--Light-Light--100, #FFF) !important;
 
   opacity: 0.6;
-
+  transition: width 0.3s ease, height 0.3s ease;
   position : relative;
 
 }
@@ -177,7 +177,7 @@
 .swiper-pagination-bullet-active {
 
   width: 2.6875rem;
-
+  transition: width 0.3s ease, height 0.3s ease;
   height: 0.7rem;
   opacity: 1;
   flex-shrink: 0;
