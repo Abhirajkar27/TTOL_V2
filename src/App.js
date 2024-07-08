@@ -4,10 +4,24 @@ import "./App.css";
 import Eclipse from "./components/Eclipse";
 import Landing from "./pages/Landing";
 import TruthIp from "./pages/TruthIp";
+import SendPage from "./pages/SendPage";
 
 
 const App = () => {
-  const [isAddTruthPage, setIsAddTruthPage] = useState(false);
+
+  const [gameIndex, setIndex] = useState(null);
+
+  let content;
+  switch (gameIndex) {
+    case 0:
+      content = <TruthIp onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
+      break;
+    case 1:
+      content = <SendPage/>;
+      break;
+    default:
+      content = <Landing onNext={()=>{setIndex(0);}}/>;
+  }
 
   return (
     <div className="pgcont">
@@ -121,8 +135,7 @@ const App = () => {
       <Eclipse class="Eclp10"/>
       <Eclipse class="Eclp11"/>
       <Eclipse class="Eclp12"/>
-      {!isAddTruthPage &&<Landing onNext={()=>{setIsAddTruthPage(true);}}/>}
-      {isAddTruthPage && <TruthIp onClose={()=>{setIsAddTruthPage(false);}}/>}
+      {content}
     </div>
   );
 };

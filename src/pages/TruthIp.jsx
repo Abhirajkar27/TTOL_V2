@@ -71,6 +71,7 @@ const TruthIp = (props) => {
             setCurrentSlide(2);
         } else if (currentSlide === 2 && truth1 && truth2 && lie) {
             console.log('Send Data:', truthOrLie);
+            props.onforw();
         }
         else {
             const emptyField = !truth1 ? 0 : !truth2 ? 1 : 2;
