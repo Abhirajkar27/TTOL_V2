@@ -5,11 +5,21 @@ const AddNote = () => {
   const [textareaValue, setTextareaValue] = useState('');
 
   const handleTextareaChange = (e) => {
-    const value = e.target.value.replace(/\s+/g, ' ').trim();
+    const value = e.target.value;
     setTextareaValue(value);
 
+    
     e.target.style.height = 'auto';
-    e.target.style.height = e.target.scrollHeight + 'px';
+    let newHeight = e.target.scrollHeight;
+
+    if (newHeight > 176) {
+      newHeight = 176;
+     
+      const truncatedValue = value.substring(0, e.target.selectionStart - 1);
+      setTextareaValue(truncatedValue);
+    }
+
+    e.target.style.height = `${newHeight}px`;
   };
 
   return (
@@ -20,7 +30,7 @@ const AddNote = () => {
         value={textareaValue}
         onChange={handleTextareaChange}
         rows={1}
-        style={{ minHeight: '4.9vh' , resize:"none"}} 
+        style={{ minHeight: '4.9vh', resize: 'none', overflow: 'hidden' }} 
       ></textarea>
     </div>
   );
