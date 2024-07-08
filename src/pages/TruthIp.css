@@ -1,92 +1,189 @@
 .truthIPPage {
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
 }
+
 .swiper_container{
+
   width: 100vw;
+  height :63vh;
 }
+
+
+
 
 .backbtnTTOL {
+
   width: 1.5rem;
+
   height: 1.5rem;
+
   position: fixed;
+
   float: left;
+
   left:1.2rem;
+
   top:2rem;
+
 }
+
 .topsmallcards {
+
   width: 4.65838rem;
+
   height: 2.92038rem;
+
   flex-shrink: 0;
+
   margin-top: 2.25rem;
+
   margin-bottom: 2.2rem;
+
 }
+
+
+
 
 .nxtbtntp {
+
   display: flex;
+
   /* width: 13.625rem; */
+
   width: 56.5vw;
+
   height: 5.6vh;
+
   padding: 0.9375rem 2rem;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 0.625rem;
+
   border: 0px;
+
   border-radius: 0.75rem;
+
   background: var(--Primary-Primary-100, #c6ff00);
+
   position: fixed;
+
   bottom: 2rem;
+
   cursor: not-allowed;
+
 }
+
 .nxtbtntp-lt{
+
   margin-top: 7.6rem;
+
 }
+
 .nxtbtntp-txt {
+
   color: var(--Neutral-Rich-Dark, #090909);
+
   font-family: Gilroy;
+
   font-size: 0.875rem;
+
   font-style: normal;
+
   font-weight: 700;
+
   line-height: 100%;
+
   opacity: 0.3;
+
 }
+
 .enable-next{
+
   opacity: 1;
+
   font-weight: bold; 
+
 }
+
 .tick-onfirst{
+
  width: 0.875rem;
+
  height: 0.875rem;
+
  fill: var(--Neutral-Dark-alpha-10, rgba(22, 23, 22, 0.10));
+
  z-index: 9999;
+
 }
+
 .tick_svg{
+
   position: relative;
+
   top: 2.35rem;
+
   right: .45rem;
+
 }
+
 .tick_svg2{
+
   position: relative;
+
   top: 1.85rem;
+
 }
+
 .tick_svg3{
+
   position: relative;
+
   top: 2.35rem;
+
   right: -.45rem;
+
 }
+
+
+
 
 .swiper-pagination-bullet {
+
   width: 12px;
+
   height: 12px;
+
   background: #526175;
+
   opacity: 1;
+
+  position : relative;
+
 }
 
+
+
+
 .swiper-pagination-bullet-active {
+
   width: 1.6875rem;
+
   height: 0.5rem;
+
   flex-shrink: 0;
+
   border-radius: 1.875rem;
+
 background: var(--Light-Light--100, #FFF);
+
 }
