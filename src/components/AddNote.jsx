@@ -20,7 +20,7 @@ const AddNote = () => {
         value={textareaValue}
         onChange={handleTextareaChange}
         rows={1}
-        style={{ minHeight: '4.85vh' }} 
+        style={{ minHeight: '4.9vh' , resize:"none"}} 
       ></textarea>
     </div>
   );
