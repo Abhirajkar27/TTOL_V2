@@ -159,13 +159,13 @@
 
 .swiper-pagination-bullet {
 
-  width: 12px;
+  width: 14px;
 
-  height: 12px;
+  height: 14px;
 
-  background: #526175;
+  background:  var(--Light-Light--100, #FFF) !important;
 
-  opacity: 1;
+  opacity: 0.6;
 
   position : relative;
 
@@ -176,14 +176,13 @@
 
 .swiper-pagination-bullet-active {
 
-  width: 1.6875rem;
+  width: 2.6875rem;
 
-  height: 0.5rem;
-
+  height: 0.7rem;
+  opacity: 1;
   flex-shrink: 0;
 
   border-radius: 1.875rem;
-
-background: var(--Light-Light--100, #FFF);
+  margin-bottom: 1px !important;
 
 }
