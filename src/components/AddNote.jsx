@@ -5,10 +5,9 @@ const AddNote = () => {
   const [textareaValue, setTextareaValue] = useState('');
 
   const handleTextareaChange = (e) => {
-    const value = e.target.value;
+    const value = e.target.value.replace(/\s+/g, ' ').trim();
     setTextareaValue(value);
 
-    
     e.target.style.height = 'auto';
     let newHeight = e.target.scrollHeight;
 
