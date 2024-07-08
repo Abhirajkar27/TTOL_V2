@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Cards from '../components/Cards'
+import "./SendPage.css";
 import AddNote from '../components/AddNote';
 import imge from"../assets/img/3cards.png";
 const SendPage = (props) => {
@@ -16,11 +16,11 @@ const SendPage = (props) => {
                         fill="white" />
                 </svg>
             </div>
-      <div className={`Landing_Upperdiv updmargintop`}>
+      <div className={`Landing_Upperdiv updmargintop-n`}>
         <p className='Landing_YB'>You both will love</p>
         <p className='Landing_TL'> 2 Truths and a lie</p>
       </div>
-      <div className={`landing_cards lanmargintop`}>
+      <div className={`landing_cards lanmargintop-n`}>
         {/* <Cards sign='?' className={'card1'} />
         <Cards sign='?' className={'card2'} />
         <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' /> */}
