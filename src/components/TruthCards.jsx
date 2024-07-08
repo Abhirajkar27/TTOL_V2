@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
 
-const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption, TL}) => {
+const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption, TL, setTruthOrLie,ToL}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [tarr, setTarr] = useState([
     "I can't swim",
@@ -22,6 +22,8 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
     if (lineCount <= 4) {
       const trimmedValue = value.replace(/^\s+/g, '');
       setSelectedOption(trimmedValue);
+      console.log("greets", ToL, trimmedValue);
+      setTruthOrLie(prevState => ({ ...prevState, [ToL]: value }));
     }
   };
  
@@ -35,6 +37,7 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
+    setTruthOrLie(prevState => ({ ...prevState, [ToL]: option }));
     setIsFocused(true);
   };
 
