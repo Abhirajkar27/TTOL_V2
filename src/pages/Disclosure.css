@@ -11,11 +11,21 @@
   }
   
   @keyframes oscillate {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    50% { transform: translateX(0); }
-    75% { transform: translateX(10px); }
-    100% { transform: translateX(0); }
+    0% { 
+      transform: translateX(0) translateY(0); 
+    }
+    25% { 
+      transform: translateX(-10px) translateY(-10px); 
+    }
+    50% { 
+      transform: translateX(0) translateY(0); 
+    }
+    75% { 
+      transform: translateX(10px) translateY(10px); 
+    }
+    100% { 
+      transform: translateX(0) translateY(0); 
+    }
   }
   
   .image {
