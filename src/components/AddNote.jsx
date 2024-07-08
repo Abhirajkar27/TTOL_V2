@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddNote.css';
 
 const AddNote = () => {
+  const [textareaValue, setTextareaValue] = useState('');
+
   const handleTextareaChange = (e) => {
-    // e.target.style.height = 'auto';
+    const value = e.target.value.replace(/\s+/g, ' ').trim();
+    setTextareaValue(value);
+
+    e.target.style.height = 'auto';
     e.target.style.height = e.target.scrollHeight + 'px';
-    console.log(e.target.scrollHeight);
   };
 
   return (
@@ -13,7 +17,10 @@ const AddNote = () => {
       <textarea
         className='Lie_AddNote'
         placeholder='Add Note'
+        value={textareaValue}
         onChange={handleTextareaChange}
+        rows={1}
+        style={{ minHeight: '4.85vh' }} 
       ></textarea>
     </div>
   );
