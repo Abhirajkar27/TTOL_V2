@@ -65,7 +65,7 @@ const TruthIp = (props) => {
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
-                loop={true}
+                loop={false}
                 spaceBetween={'0'}
                 slidesPerView={'1.12'}
                 coverflowEffect={{
