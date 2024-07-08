@@ -34,8 +34,14 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: -4.06rem;
-  margin-bottom: 1rem;
+  margin-top: 11.5rem;
+  margin-bottom: 3.8rem;
+}
+
+.resizable-image {
+  width: 100%;
+  max-width: 82vw;
+  height: auto; 
 }
 .Landing_card {
   border: 2px solid black;
@@ -117,7 +123,7 @@ body {
 }
 .lanmargintop{
   /* margin-top: -12.8rem !important; */
-  margin-top: -26vh !important;
+  margin-top: 5vh !important;
 }
 
 .Landing_Upperdiv{
@@ -330,7 +336,7 @@ body {
 
 @media (max-height: 770px) {
   .lanmargintop {
-    margin-bottom: -2vh !important;
+    margin-bottom: 4vh !important;
   }
 }
 @media (min-height: 880px) {

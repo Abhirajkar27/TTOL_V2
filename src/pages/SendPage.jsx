@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Cards from '../components/Cards'
 import AddNote from '../components/AddNote';
+import imge from"../assets/img/3cards.png";
 const SendPage = (props) => {
 
   return (
@@ -20,9 +21,10 @@ const SendPage = (props) => {
         <p className='Landing_TL'> 2 Truths and a lie</p>
       </div>
       <div className={`landing_cards lanmargintop`}>
-        <Cards sign='?' className={'card1'} />
+        {/* <Cards sign='?' className={'card1'} />
         <Cards sign='?' className={'card2'} />
-        <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' />
+        <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' /> */}
+        <img src={imge} className="resizable-image"  />
       </div>
 <AddNote />
 <button className={`nxtbtntp`} onClick={()=>props.onforw()} ><span className={`nxtbtntp-txt`}>Send</span></button>

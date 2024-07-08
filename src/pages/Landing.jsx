@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Cards from '../components/Cards'
 import ActivityInfo from "../components/ActivityInfo";
+import imge from"../assets/img/3cards.png";
 const Landing = (props) => {
   const [isShowActivityInfo, setISShowActivityInfo] = useState(false);
 
@@ -11,9 +12,10 @@ const Landing = (props) => {
         <p className='Landing_TL'> 2 Truths and a lie</p>
       </div>
       <div className={`landing_cards ${isShowActivityInfo?'lanmargintop':''}`}>
-        <Cards sign='?' className={'card1'} />
+        {/* <Cards sign='?' className={'card1'} />
         <Cards sign='?' className={'card2'} />
-        <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' />
+        <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' /> */}
+        <img src={imge} className="resizable-image"  />
       </div>
       {isShowActivityInfo && <ActivityInfo onClose={() => { setISShowActivityInfo(false);}}/>}
       {!isShowActivityInfo && <div className="activity_info">
