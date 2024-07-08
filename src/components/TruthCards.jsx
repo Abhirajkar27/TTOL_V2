@@ -37,7 +37,7 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-    setTruthOrLie(prevState => ({ ...prevState, [ToL]: option }));
+    // setTruthOrLie(prevState => ({ ...prevState, [ToL]: option }));
     setIsFocused(true);
   };
 
