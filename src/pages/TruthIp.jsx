@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import './TruthIp.css';
 import TruthCards from '../components/TruthCards';
-import AddNote from '../components/AddNote';
+// import AddNote from '../components/AddNote';S
 
 const TruthIp = (props) => {
     const [canMove, setCanMove] = useState(false);
@@ -19,18 +19,20 @@ const TruthIp = (props) => {
     const [truth2, setTruth2] = useState(false);
     const [lie, setLie] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
+    const [selectedOption2, setSelectedOption2] = useState('');
+    const [selectedOption3, setSelectedOption3] = useState('');
 
-    useEffect(() => {
-        if (truthOrLie.length === 1) {
-            setTruth1(true);
-        }
-        else if (truthOrLie.length === 2) {
-            setTruth2(true);
-        }
-        else if (truthOrLie.length === 3) {
-            setLie(true);
-        }
-    }, [truthOrLie]);
+    // useEffect(() => {
+    //     if (truthOrLie.length === 1) {
+    //         setTruth1(true);
+    //     }
+    //     else if (truthOrLie.length === 2) {
+    //         setTruth2(true);
+    //     }
+    //     else if (truthOrLie.length === 3) {
+    //         setLie(true);
+    //     }
+    // }, [truthOrLie]);
 
     function handleNextClick() {
         if (truthOrLie.length !== 3) {
@@ -90,15 +92,15 @@ const TruthIp = (props) => {
                     <TruthCards TL={'truth'} back={true} text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'truth'} back={true} text={'2st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+                    <TruthCards TL={'truth'} back={true} text={'2st truth'} setCanMove={setCanMove} selectedOption={selectedOption2} setSelectedOption={setSelectedOption2} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption3} setSelectedOption={setSelectedOption3} />
                 </SwiperSlide>
             </Swiper>
 
             {/* {truth2 && <AddNote/>} */}
-            <button className={`nxtbtntp ${truth2 ? 'nxtbtntp-lt' : ''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2 ? 'Send' : 'Next'}</span></button>
+            <button className={`nxtbtntp ${truth2 ? 'nxtbtntp-lt' : ''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt enable-next`}>{'Next'}</span></button>
         </div>
     )
 }
