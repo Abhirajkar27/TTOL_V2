@@ -65,9 +65,9 @@ const TruthIp = (props) => {
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
-                loop={false}
-                spaceBetween={0}
-                slidesPerView={1.12}
+                loop={true}
+                spaceBetween={'0'}
+                slidesPerView={'1.12'}
                 coverflowEffect={{
                     rotate: 0,
                     stretch: 0,
@@ -96,9 +96,12 @@ const TruthIp = (props) => {
                 <div className="swiper-pagination"></div>
             </Swiper>
 
-            <button className={`nxtbtntp ${truth2 ? 'nxtbtntp-lt' : ''}`} onClick={handleNextClick} disabled={!canMove}>
-                <span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2 ? 'Send' : 'Next'}</span>
-            </button>
+
+
+
+
+            {/* {truth2 && <AddNote/>} */}
+            <button className={`nxtbtntp ${truth2 ? 'nxtbtntp-lt' : ''}`} onClick={handleNextClick} disabled={!canMove}><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2 ? 'Send' : 'Next'}</span></button>
         </div>
     )
 }
