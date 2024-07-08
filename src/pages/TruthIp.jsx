@@ -22,47 +22,48 @@ const TruthIp = (props) => {
 
 
     useEffect(() => {
+        console.log("running");
         if (truthOrLie.truth1) {
             setTruth1(true);
-        } else if (truthOrLie.truth2) {
+        } 
+        if (truthOrLie.truth2) {
             setTruth2(true);
-        } else if (truthOrLie.lie){
+        }
+        if (truthOrLie.lie) {
             setLie(true);
         }
+        if (!truthOrLie.truth1) {
+            setTruth1(false);
+        }
+        if (!truthOrLie.truth2) {
+            setTruth2(false);
+        }
+        if (!truthOrLie.lie) {
+            setLie(false);
+        }
     }, [truthOrLie]);
-
-    // useEffect(() => {
-    //     if (selectedOption) {
-    //         console.log(selectedOption);
-    //     } else if (selectedOption2) {
-    //         console.log(selectedOption2);
-    //     } else if (selectedOption){
-    //         console.log(selectedOption3);
-    //     }
-    // }, [selectedOption,selectedOption2,selectedOption3]);
-
 
 
     function handleNextClick() {
         const { truth1, truth2, lie } = truthOrLie;
-        if(currentSlide === 0 && selectedOption){
-            setTruthOrLie(prevState => ({ ...prevState, truth1: selectedOption }));
-            swiperRef.current.swiper.slideTo(1);
-            setCurrentSlide(1);
-        }else if(currentSlide === 1 && selectedOption2){
-            setTruthOrLie(prevState => ({ ...prevState, truth2: selectedOption2 }));
-            swiperRef.current.swiper.slideTo(2);
-            setCurrentSlide(2);
-        }else if(currentSlide === 2 && selectedOption3){
-            setTruthOrLie(prevState => ({ ...prevState, lie: selectedOption3 }));
-            if (currentSlide === 2 && truth1 && truth2 && lie) {
-                console.log('Send Data:', truthOrLie);}
-                else{
-            const emptyField = !truth1 ? 0 : !truth2 ? 1 : 2;
-            swiperRef.current.swiper.slideTo(emptyField);
-            setCurrentSlide(emptyField);}
-        }
-        else if (currentSlide === 0 && truth1) {
+        // if(currentSlide === 0 && selectedOption){
+        //     setTruthOrLie(prevState => ({ ...prevState, truth1: selectedOption }));
+        //     swiperRef.current.swiper.slideTo(1);
+        //     setCurrentSlide(1);
+        // }else if(currentSlide === 1 && selectedOption2){
+        //     setTruthOrLie(prevState => ({ ...prevState, truth2: selectedOption2 }));
+        //     swiperRef.current.swiper.slideTo(2);
+        //     setCurrentSlide(2);
+        // }else if(currentSlide === 2 && selectedOption3){
+        //     setTruthOrLie(prevState => ({ ...prevState, lie: selectedOption3 }));
+        //     if (currentSlide === 2 && truth1 && truth2 && lie) {
+        //         console.log('Send Data:', truthOrLie);}
+        //         else{
+        //     const emptyField = !truth1 ? 0 : !truth2 ? 1 : 2;
+        //     swiperRef.current.swiper.slideTo(emptyField);
+        //     setCurrentSlide(emptyField);}
+        // }
+        if (currentSlide === 0 && truth1) {
             swiperRef.current.swiper.slideTo(1);
             setCurrentSlide(1);
         } else if (currentSlide === 1 && truth2) {
@@ -71,7 +72,7 @@ const TruthIp = (props) => {
         } else if (currentSlide === 2 && truth1 && truth2 && lie) {
             console.log('Send Data:', truthOrLie);
         }
-         else {
+        else {
             const emptyField = !truth1 ? 0 : !truth2 ? 1 : 2;
             swiperRef.current.swiper.slideTo(emptyField);
             setCurrentSlide(emptyField);
@@ -94,22 +95,22 @@ const TruthIp = (props) => {
                 </svg>
             </div>
             <div className='topsmallcards'>
-                <svg className='tick_svg' xmlns="http://www.w3.org/2000/svg" width="14" visibility={(selectedOption || truth1) ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
+                <svg className='tick_svg' xmlns="http://www.w3.org/2000/svg" width="14" visibility={truth1 ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
                     <rect width="14" height="14" rx="7" fill="#161716" fillOpacity="0.1" />
                     <path d="M4 7L6 9L10 5" stroke="#161716" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <svg className='tick_svg2' xmlns="http://www.w3.org/2000/svg" width="14" visibility={(selectedOption2 || truth2) ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
+                <svg className='tick_svg2' xmlns="http://www.w3.org/2000/svg" width="14" visibility={truth2 ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
                     <rect width="14" height="14" rx="7" fill="#161716" fillOpacity="0.1" />
                     <path d="M4 7L6 9L10 5" stroke="#161716" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <svg className='tick_svg3' xmlns="http://www.w3.org/2000/svg" width="14" visibility={(selectedOption3 || lie) ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
+                <svg className='tick_svg3' xmlns="http://www.w3.org/2000/svg" width="14" visibility={lie ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
                     <rect width="14" height="14" rx="7" fill="#161716" fillOpacity="0.1" />
                     <path d="M4 7L6 9L10 5" stroke="#161716" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 47" fill="none">
-                    <rect y="11.9526" width="23" height="36" rx="3" transform="rotate(-15 0 11.9526)" fill={`${selectedOption || truth1 ? "#02FF89" : "#526175"}`} />
-                    <rect width="23" height="36" rx="3" transform="matrix(-0.965926 -0.258819 -0.258819 0.965926 74.5337 11.9526)" fill={`${selectedOption3 || lie ? "#FF55F8" : "#526175"}`} />
-                    <rect x="26" width="23" height="36" rx="3" fill={`${selectedOption2 || truth2 ? "#02FF89" : "#526175"}`} />
+                    <rect y="11.9526" width="23" height="36" rx="3" transform="rotate(-15 0 11.9526)" fill={truth1 ? "#02FF89" : "#526175"} />
+                    <rect width="23" height="36" rx="3" transform="matrix(-0.965926 -0.258819 -0.258819 0.965926 74.5337 11.9526)" fill={lie ? "#FF55F8" : "#526175"} />
+                    <rect x="26" width="23" height="36" rx="3" fill={truth2 ? "#02FF89" : "#526175"} />
                 </svg>
             </div>
 
@@ -139,13 +140,13 @@ const TruthIp = (props) => {
                 className="swiper_container"
             >
                 <SwiperSlide>
-                    <TruthCards TL={'truth'} back={true} text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption}  setTruthOrLie={setTruthOrLie} ToL={'truth1'}/>
+                    <TruthCards TL={'truth'} back={true} text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} setTruthOrLie={setTruthOrLie} ToL={'truth1'} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'truth'} back={true} text={'2nd truth'} setCanMove={setCanMove} selectedOption={selectedOption2} setSelectedOption={setSelectedOption2} setTruthOrLie={setTruthOrLie}  ToL={'truth2'} />
+                    <TruthCards TL={'truth'} back={true} text={'2nd truth'} setCanMove={setCanMove} selectedOption={selectedOption2} setSelectedOption={setSelectedOption2} setTruthOrLie={setTruthOrLie} ToL={'truth2'} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption3} setSelectedOption={setSelectedOption3} setTruthOrLie={setTruthOrLie}  ToL={'lie'} />
+                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption3} setSelectedOption={setSelectedOption3} setTruthOrLie={setTruthOrLie} ToL={'lie'} />
                 </SwiperSlide>
                 <div className="swiper-pagination"></div>
             </Swiper>

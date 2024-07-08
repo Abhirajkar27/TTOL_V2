@@ -22,8 +22,8 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
     if (lineCount <= 4) {
       const trimmedValue = value.replace(/^\s+/g, '');
       setSelectedOption(trimmedValue);
-      console.log("greets", ToL, trimmedValue);
       setTruthOrLie(prevState => ({ ...prevState, [ToL]: value }));
+      console.log("greets", ToL, trimmedValue);
     }
   };
  
@@ -37,7 +37,7 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-    // setTruthOrLie(prevState => ({ ...prevState, [ToL]: option }));
+    setTruthOrLie(prevState => ({ ...prevState, [ToL]: option }));
     setIsFocused(true);
   };
 
