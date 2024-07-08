@@ -22,7 +22,7 @@
 
 .Lie_AddNote:focus{
   outline: none;
-  border: none;
+  border: 1.5px solid white;
 }
 
 .Lie_AddNote::placeholder {

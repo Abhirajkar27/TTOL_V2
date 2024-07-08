@@ -15,7 +15,7 @@ const SendPage = (props) => {
         <Cards sign='?' className={'card2'} />
         <Cards sign='!' className={'card3'} color='var(--Accent-Accent--02-Accent-02-neon, #FF5AF9)' />
       </div>
-<AddNote/>
+<AddNote />
 <button className={`nxtbtntp`} onClick={()=>console.log(9)} ><span className={`nxtbtntp-txt`}>Next</span></button>
     </div>
   )
