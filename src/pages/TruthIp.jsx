@@ -31,6 +31,16 @@ const TruthIp = (props) => {
         }
     }, [truthOrLie]);
 
+    // useEffect(() => {
+    //     if (selectedOption) {
+    //         console.log(selectedOption);
+    //     } else if (selectedOption2) {
+    //         console.log(selectedOption2);
+    //     } else if (selectedOption){
+    //         console.log(selectedOption3);
+    //     }
+    // }, [selectedOption,selectedOption2,selectedOption3]);
+
 
 
     function handleNextClick() {
@@ -84,22 +94,22 @@ const TruthIp = (props) => {
                 </svg>
             </div>
             <div className='topsmallcards'>
-                <svg className='tick_svg' xmlns="http://www.w3.org/2000/svg" width="14" visibility={truth1 ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
+                <svg className='tick_svg' xmlns="http://www.w3.org/2000/svg" width="14" visibility={(selectedOption || truth1) ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
                     <rect width="14" height="14" rx="7" fill="#161716" fillOpacity="0.1" />
                     <path d="M4 7L6 9L10 5" stroke="#161716" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <svg className='tick_svg2' xmlns="http://www.w3.org/2000/svg" width="14" visibility={truth2 ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
+                <svg className='tick_svg2' xmlns="http://www.w3.org/2000/svg" width="14" visibility={(selectedOption2 || truth2) ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
                     <rect width="14" height="14" rx="7" fill="#161716" fillOpacity="0.1" />
                     <path d="M4 7L6 9L10 5" stroke="#161716" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <svg className='tick_svg3' xmlns="http://www.w3.org/2000/svg" width="14" visibility={lie ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
+                <svg className='tick_svg3' xmlns="http://www.w3.org/2000/svg" width="14" visibility={(selectedOption3 || lie) ? "" : "hidden"} height="14" viewBox="0 0 14 14" fill="none">
                     <rect width="14" height="14" rx="7" fill="#161716" fillOpacity="0.1" />
                     <path d="M4 7L6 9L10 5" stroke="#161716" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 47" fill="none">
-                    <rect y="11.9526" width="23" height="36" rx="3" transform="rotate(-15 0 11.9526)" fill={`${truth1 ? "#02FF89" : "#526175"}`} />
-                    <rect width="23" height="36" rx="3" transform="matrix(-0.965926 -0.258819 -0.258819 0.965926 74.5337 11.9526)" fill={`${lie ? "#FF55F8" : "#526175"}`} />
-                    <rect x="26" width="23" height="36" rx="3" fill={`${truth2 ? "#02FF89" : "#526175"}`} />
+                    <rect y="11.9526" width="23" height="36" rx="3" transform="rotate(-15 0 11.9526)" fill={`${selectedOption || truth1 ? "#02FF89" : "#526175"}`} />
+                    <rect width="23" height="36" rx="3" transform="matrix(-0.965926 -0.258819 -0.258819 0.965926 74.5337 11.9526)" fill={`${selectedOption3 || lie ? "#FF55F8" : "#526175"}`} />
+                    <rect x="26" width="23" height="36" rx="3" fill={`${selectedOption2 || truth2 ? "#02FF89" : "#526175"}`} />
                 </svg>
             </div>
 
