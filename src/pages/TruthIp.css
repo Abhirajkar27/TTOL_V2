@@ -75,3 +75,18 @@
   top: 2.35rem;
   right: -.45rem;
 }
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #526175;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  width: 1.6875rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 1.875rem;
+background: var(--Light-Light--100, #FFF);
+}
