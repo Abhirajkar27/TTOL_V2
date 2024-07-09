@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './TruthCards.css';
 import Truth_Options from './Truth_Options';
 
-const TruthCards = ({back , second = false, third = false , text , setCanMove, selectedOption, setSelectedOption, TL, setTruthOrLie,ToL}) => {
+const TruthCards = ({ back, second = false, third = false, text, setCanMove, selectedOption, setSelectedOption, TL, setTruthOrLie, ToL }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [tarr, setTarr] = useState([
     "I can't swim",
@@ -15,18 +15,41 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
 
   const handleChange = (event) => {
     let value = event.target.value;
-    if (value.length > 68) {
-      value = value.slice(0, 68); 
+    if (value.length > 55) {
+      value = value.slice(0, 55); 
     }
     const lineCount = value.split('\n').length;
     if (lineCount <= 4) {
       const trimmedValue = value.replace(/^\s+/g, '');
       setSelectedOption(trimmedValue);
-      setTruthOrLie(prevState => ({ ...prevState, [ToL]: value }));
+      setTruthOrLie(prevState => ({ ...prevState, [ToL]: trimmedValue}));
       console.log("greets", ToL, trimmedValue);
     }
   };
- 
+
+//   const handleChange = (event) => {
+//     let value = event.target.value;
+//     let newHeight = event.target.scrollHeight;
+//     console.log(newHeight);
+
+
+//     if (2/3*newHeight > 88) {
+//         value = value.substring(0, event.target.selectionStart - 1);
+//         newHeight = 88;
+//     }
+
+//     const lineCount = value.split('\n').length;
+//     if (lineCount <= 4) {
+//         const trimmedValue = value.replace(/^\s+/g, '');
+//         setSelectedOption(trimmedValue);
+//         setTruthOrLie(prevState => ({ ...prevState, [ToL]: trimmedValue }));
+//         console.log("greets", ToL, trimmedValue);
+//     }
+// };
+
+
+  
+
   const handleFocus = () => {
     setIsFocused(true);
   };
@@ -45,16 +68,16 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
     console.log('Fetching new options...');
   };
 
-  useEffect(()=>{
-    selectedOption ? setCanMove(true):setCanMove(false);
-  },[selectedOption]);
+  useEffect(() => {
+    selectedOption ? setCanMove(true) : setCanMove(false);
+  }, [selectedOption]);
 
   return (
     <>
       <div className="crd-stk">
         {/* <div className={`Back_card_two ${third ? 'pink' : 'green'}`}></div> */}
         {/* <div className={`Back_Card_one ${second ? 'pink' : 'green'}`}></div> */}
-        <div className='Card_Truth_Lie' style={!back?{backgroundColor:'#FF55F8'}:{backgroundColor:'#02FF89'}}>
+        <div className='Card_Truth_Lie' style={!back ? { backgroundColor: '#FF55F8' } : { backgroundColor: '#02FF89' }}>
           <p className="Card_heading">{text}</p>
           <textarea
             type="text"
@@ -65,7 +88,7 @@ const TruthCards = ({back , second = false, third = false , text , setCanMove, s
             onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            style={{ textAlign: 'center', lineHeight: 'normal' , resize:"none"}}
+            style={{ textAlign: 'center', lineHeight: 'normal', resize: "none", whiteSpace: 'pre-wrap' }}
           />
           <div className='Card_options'>
             {tarr.map((element, index) => (
