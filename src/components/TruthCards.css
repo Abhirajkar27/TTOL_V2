@@ -65,15 +65,19 @@
 
 .Card_next_button {
   display: inline-flex;
-  padding: 0.125rem 0.625rem;
+  padding: 0.225vh 2.625vw;
   align-items: center;
-  gap: 0.5625rem;
+  /* gap: 0.5625rem; */
+  gap: 1vh;
   border-radius: 3.125rem;
   background: var(--Dark-Dark--100, #0e1928);
   color: white;
   border: none;
   font-weight: 100;
-  margin-bottom: 1vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 4vh;
 }
 
 .Truth_Options {
@@ -123,7 +127,9 @@
 }
 
 .Card_options {
-  margin:  4.5vh auto 2vh;
+  margin-top:  4.5vh;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   /* width: 18.25rem; */
   width: 80vw;
