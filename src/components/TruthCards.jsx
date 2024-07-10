@@ -4,14 +4,46 @@ import Truth_Options from './Truth_Options';
 
 const TruthCards = ({ back, second = false, third = false, text, setCanMove, selectedOption, setSelectedOption, TL, setTruthOrLie, ToL }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [tarr, setTarr] = useState([
-    "I can't swim",
-    "I have a black belt in karate",
-    "I make my own clothes",
-    "I've never tasted coffee",
-    "I've accidentally texted a meme to my boss",
-    "I've ghosted a celebrity in DMs",
-  ]);
+  const [tarr, setTarr] = useState([]);
+  const [allStatements, setAllStatements] = useState({ small: [], medium: [], large: [] });
+
+  useEffect(() => {
+    fetch('https://vyld-cb-staging-api.vyld.io/api/v1/activity-games?name=truths_and_lie')
+      .then(response => response.json())
+      .then(data => {
+        const statements = data.data.result.statements;
+        const categorizedStatements = categorizeStatements(statements);
+        setAllStatements(categorizedStatements);
+        setTarr(getRandomStatements(categorizedStatements));
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  const categorizeStatements = (statements) => {
+    const small = [];
+    const medium = [];
+    const large = [];
+    statements.forEach(statement => {
+      if (statement.length <= 20) {
+        small.push(statement);
+      } else if (statement.length <= 40) {
+        medium.push(statement);
+      } else {
+        large.push(statement);
+      }
+    });
+    return { small, medium, large };
+  };
+
+  const getRandomStatements = (categorizedStatements) => {
+    const { small, medium, large } = categorizedStatements;
+    const getRandomFromArray = (arr, num) => arr.sort(() => 0.5 - Math.random()).slice(0, num);
+    return [
+      ...getRandomFromArray(small, 2),
+      ...getRandomFromArray(medium, 2),
+      ...getRandomFromArray(large, 1),
+    ];
+  };
 
   const handleChange = (event) => {
     let value = event.target.value;
@@ -26,29 +58,6 @@ const TruthCards = ({ back, second = false, third = false, text, setCanMove, sel
       console.log("greets", ToL, trimmedValue);
     }
   };
-
-//   const handleChange = (event) => {
-//     let value = event.target.value;
-//     let newHeight = event.target.scrollHeight;
-//     console.log(newHeight);
-
-
-//     if (2/3*newHeight > 88) {
-//         value = value.substring(0, event.target.selectionStart - 1);
-//         newHeight = 88;
-//     }
-
-//     const lineCount = value.split('\n').length;
-//     if (lineCount <= 4) {
-//         const trimmedValue = value.replace(/^\s+/g, '');
-//         setSelectedOption(trimmedValue);
-//         setTruthOrLie(prevState => ({ ...prevState, [ToL]: trimmedValue }));
-//         console.log("greets", ToL, trimmedValue);
-//     }
-// };
-
-
-  
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -65,7 +74,7 @@ const TruthCards = ({ back, second = false, third = false, text, setCanMove, sel
   };
 
   const handleNewOptionsClick = () => {
-    console.log('Fetching new options...');
+    setTarr(getRandomStatements(allStatements));
   };
 
   useEffect(() => {
@@ -75,8 +84,6 @@ const TruthCards = ({ back, second = false, third = false, text, setCanMove, sel
   return (
     <>
       <div className="crd-stk">
-        {/* <div className={`Back_card_two ${third ? 'pink' : 'green'}`}></div> */}
-        {/* <div className={`Back_Card_one ${second ? 'pink' : 'green'}`}></div> */}
         <div className='Card_Truth_Lie' style={!back ? { backgroundColor: '#FF55F8' } : { backgroundColor: '#02FF89' }}>
           <p className="Card_heading">{text}</p>
           <textarea
@@ -84,7 +91,6 @@ const TruthCards = ({ back, second = false, third = false, text, setCanMove, sel
             className={`Card_Text ${isFocused ? 'input-focused' : ''}`}
             placeholder={`Enter the ${TL}`}
             value={selectedOption}
-            // onChange={(e) => setSelectedOption(e.target.value)}
             onChange={handleChange}
             onFocus={handleFocus}
             onBlur={handleBlur}
