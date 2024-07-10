@@ -39,7 +39,8 @@
   border-radius: 0.75rem;
   border: 1px solid var(--Neutral-Dark-alpha-10, rgba(22, 23, 22, 0.1));
   background: var(--Neutral-Dark-alpha-10, rgba(22, 23, 22, 0.1));
-  color: var(--Neutral-Dark-alpha-60, rgba(22, 23, 22, 0.6));
+  color: var(--Neutral-Dark-alpha-60, rgba(22, 23, 22));
+  /* color: white; */
   font-feature-settings: "clig" off, "liga" off;
   font-family: Gilroy;
   font-size: 1.1875rem;
