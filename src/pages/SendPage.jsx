@@ -18,7 +18,7 @@ const SendPage = (props) => {
     };
     console.log(JSON.stringify(data));
     try {
-      const response = await fetch('https://2a77-65-0-168-245.ngrok-free.app/api/v1/activity-games/game', {
+      const response = await fetch('https://vyld-cb-dev-api.vyld.io/api/v1/activity-games/game', {
         // mode: 'no-cors',
         method: 'POST',
         headers: {
@@ -32,6 +32,7 @@ const SendPage = (props) => {
         console.log("data",responseData );
         const activityId = responseData.data.activityId; 
         console.log('Activity ID:', activityId);
+        props.setActivityId(activityId);
       } else {
         console.error('Failed to send data', response.statusText);
       }

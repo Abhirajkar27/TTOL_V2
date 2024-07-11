@@ -12,11 +12,12 @@ const App = () => {
 
   const [gameIndex, setIndex] = useState(null);
   const [truthOrLie, setTruthOrLie] = useState({ truth1: '', truth2: '', lie: '' });
+  const [activityId, setActivityId] = useState('');
 
   let content;
   switch (gameIndex) {
     case 0:
-      content = <TruthIp truthOrLie={truthOrLie} setTruthOrLie={setTruthOrLie} onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
+      content = <TruthIp truthOrLie={truthOrLie} setTruthOrLie={setTruthOrLie} setActivityId={setActivityId} onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
       break;
     case 1:
       content = <SendPage truthOrLie={truthOrLie}  onBack={()=>{setIndex(0);}} onforw={()=>{setIndex(2);}}/>;
