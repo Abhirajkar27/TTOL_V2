@@ -10,7 +10,6 @@ import TruthCards from '../components/TruthCards';
 // import AddNote from '../components/AddNote';
 const TruthIp = (props) => {
     const [canMove, setCanMove] = useState(false);
-    const [truthOrLie, setTruthOrLie] = useState({ truth1: '', truth2: '', lie: '' });
     const [currentSlide, setCurrentSlide] = useState(0);
     const [truth1, setTruth1] = useState(false);
     const [truth2, setTruth2] = useState(false);
@@ -23,29 +22,29 @@ const TruthIp = (props) => {
 
     useEffect(() => {
         console.log("running");
-        if (truthOrLie.truth1) {
+        if (props.truthOrLie.truth1) {
             setTruth1(true);
         } 
-        if (truthOrLie.truth2) {
+        if (props.truthOrLie.truth2) {
             setTruth2(true);
         }
-        if (truthOrLie.lie) {
+        if (props.truthOrLie.lie) {
             setLie(true);
         }
-        if (!truthOrLie.truth1) {
+        if (!props.truthOrLie.truth1) {
             setTruth1(false);
         }
-        if (!truthOrLie.truth2) {
+        if (!props.truthOrLie.truth2) {
             setTruth2(false);
         }
-        if (!truthOrLie.lie) {
+        if (!props.truthOrLie.lie) {
             setLie(false);
         }
-    }, [truthOrLie]);
+    }, [props.truthOrLie]);
 
 
     function handleNextClick() {
-        const { truth1, truth2, lie } = truthOrLie;
+        const { truth1, truth2, lie } = props.truthOrLie;
         // if(currentSlide === 0 && selectedOption){
         //     setTruthOrLie(prevState => ({ ...prevState, truth1: selectedOption }));
         //     swiperRef.current.swiper.slideTo(1);
@@ -70,7 +69,7 @@ const TruthIp = (props) => {
             swiperRef.current.swiper.slideTo(2);
             setCurrentSlide(2);
         } else if (currentSlide === 2 && truth1 && truth2 && lie) {
-            console.log('Send Data:', truthOrLie);
+            console.log('Send Data:', props.truthOrLie);
             props.onforw();
         }
         else {
@@ -141,19 +140,16 @@ const TruthIp = (props) => {
                 className="swiper_container"
             >
                 <SwiperSlide>
-                    <TruthCards TL={'truth'} back={true} text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} setTruthOrLie={setTruthOrLie} ToL={'truth1'} />
+                    <TruthCards TL={'truth'} back={true} text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} setTruthOrLie={props.setTruthOrLie} ToL={'truth1'} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'truth'} back={true} text={'2nd truth'} setCanMove={setCanMove} selectedOption={selectedOption2} setSelectedOption={setSelectedOption2} setTruthOrLie={setTruthOrLie} ToL={'truth2'} />
+                    <TruthCards TL={'truth'} back={true} text={'2nd truth'} setCanMove={setCanMove} selectedOption={selectedOption2} setSelectedOption={setSelectedOption2} setTruthOrLie={props.setTruthOrLie} ToL={'truth2'} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption3} setSelectedOption={setSelectedOption3} setTruthOrLie={setTruthOrLie} ToL={'lie'} />
+                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption3} setSelectedOption={setSelectedOption3} setTruthOrLie={props.setTruthOrLie} ToL={'lie'} />
                 </SwiperSlide>
                 <div className="swiper-pagination"></div>
             </Swiper>
-            {/* {truth2 && <AddNote/>} */}
-
-            {/* <button className={`nxtbtntp ${truth2 ? 'nxtbtntp-lt' : ''}`} onClick={handleNextClick} ><span className={`nxtbtntp-txt ${canMove ? 'enable-next' : ''}`}>{truth2 ? 'Send' : 'Next'}</span></button> */}
             <button className={`nxtbtntp`} onClick={handleNextClick} ><span className={`nxtbtntp-txt`}>Next</span></button>
         </div>
     )

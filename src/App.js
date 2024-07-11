@@ -11,14 +11,15 @@ import Disclosure from './pages/Disclosure';
 const App = () => {
 
   const [gameIndex, setIndex] = useState(null);
+  const [truthOrLie, setTruthOrLie] = useState({ truth1: '', truth2: '', lie: '' });
 
   let content;
   switch (gameIndex) {
     case 0:
-      content = <TruthIp onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
+      content = <TruthIp truthOrLie={truthOrLie} setTruthOrLie={setTruthOrLie} onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
       break;
     case 1:
-      content = <SendPage onBack={()=>{setIndex(0);}} onforw={()=>{setIndex(2);}}/>;
+      content = <SendPage truthOrLie={truthOrLie}  onBack={()=>{setIndex(0);}} onforw={()=>{setIndex(2);}}/>;
       break;
     case 2:
       content = <Disclosure/>;
