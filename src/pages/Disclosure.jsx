@@ -15,7 +15,6 @@ const Disclosure = (props) => {
   }, []);
 
   const handleCopy = () => {
-    console.log("coping....")
     const url = `https://2t1lactivitywybtestingrec.netlify.app?activityId=${props.activityId}`;
     navigator.clipboard.writeText(url)
       .then(() => setCopyFeedback('Copied!'))
