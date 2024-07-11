@@ -7,16 +7,12 @@ import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import './TruthIp.css';
 import TruthCards from '../components/TruthCards';
-// import AddNote from '../components/AddNote';
 const TruthIp = (props) => {
     const [canMove, setCanMove] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [truth1, setTruth1] = useState(false);
     const [truth2, setTruth2] = useState(false);
     const [lie, setLie] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('');
-    const [selectedOption2, setSelectedOption2] = useState('');
-    const [selectedOption3, setSelectedOption3] = useState('');
     const swiperRef = useRef(null);
 
 
@@ -140,13 +136,13 @@ const TruthIp = (props) => {
                 className="swiper_container"
             >
                 <SwiperSlide>
-                    <TruthCards TL={'truth'} back={true} text={'1st truth'} setCanMove={setCanMove} selectedOption={selectedOption} setSelectedOption={setSelectedOption} setTruthOrLie={props.setTruthOrLie} ToL={'truth1'} />
+                    <TruthCards TL={'truth'} back={true} text={'1st truth'} setCanMove={setCanMove} selectedOption={props.selectedOption} setSelectedOption={props.setSelectedOption} setTruthOrLie={props.setTruthOrLie} ToL={'truth1'} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'truth'} back={true} text={'2nd truth'} setCanMove={setCanMove} selectedOption={selectedOption2} setSelectedOption={setSelectedOption2} setTruthOrLie={props.setTruthOrLie} ToL={'truth2'} />
+                    <TruthCards TL={'truth'} back={true} text={'2nd truth'} setCanMove={setCanMove} selectedOption={props.selectedOption2} setSelectedOption={props.setSelectedOption2} setTruthOrLie={props.setTruthOrLie} ToL={'truth2'} />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={selectedOption3} setSelectedOption={setSelectedOption3} setTruthOrLie={props.setTruthOrLie} ToL={'lie'} />
+                    <TruthCards TL={'lie'} back={false} text={'Enter a lie'} setCanMove={setCanMove} selectedOption={props.selectedOption3} setSelectedOption={props.setSelectedOption3} setTruthOrLie={props.setTruthOrLie} ToL={'lie'} />
                 </SwiperSlide>
                 <div className="swiper-pagination"></div>
             </Swiper>

@@ -13,11 +13,14 @@ const App = () => {
   const [gameIndex, setIndex] = useState(null);
   const [truthOrLie, setTruthOrLie] = useState({ truth1: '', truth2: '', lie: '' });
   const [activityId, setActivityId] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption2, setSelectedOption2] = useState('');
+  const [selectedOption3, setSelectedOption3] = useState('');
 
   let content;
   switch (gameIndex) {
     case 0:
-      content = <TruthIp truthOrLie={truthOrLie} setTruthOrLie={setTruthOrLie}  onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
+      content = <TruthIp selectedOption={selectedOption} setSelectedOption={setSelectedOption}  selectedOption2={selectedOption2} setSelectedOption2={setSelectedOption2} selectedOption3={selectedOption3} setSelectedOption3={setSelectedOption3}  truthOrLie={truthOrLie} setTruthOrLie={setTruthOrLie}  onClose={()=>{setIndex(null);}} onforw={()=>{setIndex(1);}}/>;
       break;
     case 1:
       content = <SendPage truthOrLie={truthOrLie} setActivityId={setActivityId}  onBack={()=>{setIndex(0);}} onforw={()=>{setIndex(2);}}/>;
